@@ -1,0 +1,99 @@
+.nav {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__button {
+        width: 100%;
+        padding-right: 0;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__menu {
+        @include smaller-than-tablet { display: none; }
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+    }
+
+
+    &__menu-item {
+        margin: 0;
+        padding: 0 2em;
+        font-size: $font_size_regular;
+        font-weight: bold;
+        list-style: none;
+    }
+
+    &__menu-item-link {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &__logo { width: 25%; }
+    &__logo-image { 
+        height: 45px;
+    }
+    &__total-items {
+        @include smaller-than-tablet { display: none; }
+        font-weight: bold;
+        color: inherit;
+        font-size: $font_size_regular;
+        padding-left: 0;
+    }
+
+    &__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        text-align: right;
+    }
+
+    &--dark {
+        color: $color_dark; 
+        .hamburger__icon-path { fill: $color_dark; }
+    }
+    &--dark & {
+        &__total-items {color: $color_dark;}
+        &__button-icon { svg { path { fill: $color_dark; } } }
+    }
+
+    &--light { 
+        color: $color_light;
+        .hamburger__icon-path { fill: $color_light; }
+    }
+    &--light & {
+        &__total-items {color: $color_light;}
+        &__button-icon { svg { path { fill: $color_light; } } }
+    }
+}
+
+.header {
+    @include container-item-properties;
+    position: relative;
+    z-index: 10;
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    @include smaller-than-tablet { padding-top: 25px; }
+}
+
+.header-wrapper {
+    &__overlay {
+        background: radial-gradient(at 35% top, rgba(black, 0.35), rgba(black, 0.25));
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    background-image: $background_images_primary;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

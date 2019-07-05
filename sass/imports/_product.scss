@@ -1,0 +1,181 @@
+.product {
+    display: grid;
+    grid-template-columns: auto repeat(5, minmax(50px, 260px)) auto;
+    grid-template-rows: 210px 4fr 1fr;
+    margin-top: -110px;
+
+    &__background-left-overlay {
+        background: radial-gradient(at 35% top, rgba(black, 0.35), rgba(black, 0.25));
+        grid-column: 1 / 3;
+        grid-row: 1 / 4;
+        z-index: 1;
+        @include smaller-than-tablet { 
+            grid-column: 1 / 8;
+            grid-row: 1 / 3;
+            margin-bottom: 30%;
+        }
+    }
+
+    &__background-left { 
+        grid-column: 1 / 3;
+        grid-row: 1 / 4;
+        background-image: $background_images_primary;
+        background-size: cover;
+        @include smaller-than-tablet { 
+            grid-column: 1 / 8;
+            grid-row: 1 / 3;
+            margin-bottom: 30%;
+        }
+    }
+
+    &__background-right { 
+        grid-column: 3 / 8; 
+        grid-row: 1 / 4;
+        background-color: $color_default;
+        background-image: $background_images_secondary;
+        background-size: auto 250%;
+        background-position: center;
+        @include smaller-than-tablet { display: none; }
+    }
+
+    &__header {
+        position: relative;
+        z-index: 1;
+        grid-column: 2 / 7;
+        grid-row: 1;
+        font-weight: bold;
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+
+        margin-bottom: 50px;
+    }
+
+    &__back-to-store-link {
+        color: $color_default;
+        svg { margin-right: 10px; }
+    }
+    
+    &__details {
+        max-width: 450px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 100px;
+        grid-column: 4 / 7;
+        grid-row: 2 / 3; 
+        @include smaller-than-tablet {
+            margin-top: 50px;
+            grid-row: 3;
+            grid-column: 2 / 7;
+            margin-left: 0;
+            min-width: 100%;
+        }
+    }
+
+    &__figure {
+        display: block;
+        grid-column: 2 / 4;
+        grid-row: 2 / 3;
+        @include smaller-than-tablet {
+            grid-column: 2 / 7;
+            grid-row: 2;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__image {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        object-fit: cover;
+        box-shadow: -72px 36px 56px rgba(0, 0, 0, 0.14);
+        border-radius: 8px;
+        max-width: 400px;
+        @include smaller-than-tablet { 
+            width: 200px;
+            height: auto;
+        }
+    }
+
+    &__title {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        font-size: $font_size_xlarge;
+        margin-bottom: 20px;
+        color: $color_dark_grey;
+        
+        @include smaller-than-tablet { 
+            font-size: $font_size_large;
+        }
+    }
+
+    &__category {
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        font-size: $font_size_medium;
+        margin-bottom: 25px;
+
+        @include smaller-than-tablet { 
+            font-size: $font_size_regular;
+        }
+    }
+
+    &__price {
+        font-family: 'Open Sans', sans-serif;
+        margin-bottom: 25px;
+        font-size: $font_size_large;
+        font-weight: bold;
+        color: $color_dark_grey;
+
+        @include smaller-than-tablet { 
+            font-size: $font_size_medium;
+        }
+    }
+
+    &__description {
+        font-size: $font_size_regular;
+        color: $color_medium;
+        margin-bottom: 20px;
+
+        @include smaller-than-tablet { 
+            font-size: $font_size_regular;
+        }
+    }
+
+    &__back-to-store {
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        color: $color_default;
+        background-color: $color_active;
+        background-image: $background_images_product;
+        background-size: auto 500%;
+        background-position: center;
+
+        svg { 
+            margin: 0;
+            margin-right: 10px;
+            height: 26px;
+        }
+    }
+
+    @include smaller-than-max-width { 
+        grid-template-columns: 50px repeat(5, minmax(50px, 260px)) 50px; 
+    }
+    
+    @include smaller-than-tablet {
+        grid-template-columns: 25px repeat(5, minmax(50px, 260px)) 25px; 
+        grid-template-rows: 210px 1fr auto; 
+        button {
+            width: 100%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{% extends "body.html" %}
+{% block content %}
+<main class="content about">
+  {% set include_dict = {'page': page} %}
+  {% include "static_header.html" %}
+  {% for bulletpoint in page.bulletpoints %}
+    <section class="content__row about__section">
+      <img class="about__section-image" src="{{ bulletpoint.image | relative_url }}" alt="">
+      <div class="about__section-content-container">
+        <h2 class="about__section-title">{{ bulletpoint.title }}</h2>
+        <div class="about__section-content">
+          {{ bulletpoint.description | markdownify }}
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+
+  {% include "promo_section.html" %} 
+</main>
+{% endblock %}

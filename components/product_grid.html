@@ -1,0 +1,20 @@
+{% set listCssClass = include_dict.cssClass %}
+
+<ul class="product-grid {% if listCssClass %}{{ listCssClass }}{%endif%}">
+    {% set products = include_dict.products %}
+    {% for product in products %}
+        <li class="product-grid__item">
+            <figure data-href="{{ product.url | relative_url }}" style="background-image:url({{ product.images.default.thumbnail }})" class="product-grid__item-figure js-figure-link">
+                <figcaption>
+                    {% set include_dict= {'product': product, 'component': 'product-grid'} %}
+                    {% include "small_buy_button.html" %}
+                </figcaption>
+            </figure>
+            <div class="product-grid__definition">
+                <a href="{{ product.url | relative_url }}"><h3 class="product-grid__title">{{ product.title }}</h3></a>
+                <span class="product-grid__category"> {{ product.category }} </span>
+                <span class="product-grid__price"> ${{ product.price }} </span>
+            </div>
+        </li>
+    {% endfor %}
+</ul>

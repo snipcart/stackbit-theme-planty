@@ -1,0 +1,36 @@
+.quotes {
+  display: flex;
+
+  background-color: #F7F7F7;
+  border-radius: 15px;
+  padding: 60px;
+  @include smaller-than-tablet { padding: 25px; }
+
+  &__icon { margin-bottom: 35px; }
+  &__text { line-height: 175%; }
+
+  &__author {
+      margin-top: 35px;
+      font-weight: bold;
+      text-transform: uppercase;
+  }
+
+  &__location { font-weight: normal; }
+
+  &__separator {
+      display: block;
+      margin-left: 75px;
+      margin-right: 75px;
+      width: 1px;
+      height: 100%;
+      background-color: #CCCC;
+  }
+
+  @include smaller-than-tablet {
+      flex-direction: column;
+      &__separator {
+          margin-top: 25px;
+          margin-bottom: 25px;
+      }
+  }
+}

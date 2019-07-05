@@ -1,0 +1,69 @@
+{% set colors = site.params.styles.colors %}
+{% set backgroundImages = site.params.styles.backgroundImages %}
+
+$color_default: {{ colors.default }};
+$color_light: {{ colors.light }};
+$color_medium: {{ colors.medium }};
+$color_dark: {{ colors.dark }};
+$color_active: {{ colors.active }};
+$color_active_light: {{ colors.active_light }};
+$color_active_medium: {{ colors.active_medium }};
+$color_active_dark: {{ colors.active_dark }};
+$color_dark_grey: {{ colors.dark_grey }};
+$color_light_grey: {{ colors.light_grey }};
+
+$background_images_primary: url(../../{{ backgroundImages.primary }});
+$background_images_secondary: url(../../{{ backgroundImages.secondary }});
+$background_images_product: url(../../{{ backgroundImages.product }});
+
+$font_size_small: 18px;
+$font_size_xxlarge: 64px;
+$font_size_xlarge: 48px;
+$font_size_large: 32px;
+$font_size_medium: 24px;
+$font_size_regular: 20px;
+$font_size_small: 16px;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $color_dark;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+// Global styles
+@import "imports/reset";
+@import "imports/mixins";
+@import "imports/spacing";
+@import "imports/fonts";
+@import "imports/links";
+@import "imports/buttons";
+
+// Components
+@import "imports/nav";
+@import "imports/content";
+@import "imports/product_grid";
+@import "imports/product";
+@import "imports/store";
+@import "imports/about";
+@import "imports/hero";
+@import "imports/faq";
+@import "imports/hamburger";
+@import "imports/static_header";
+@import "imports/quotes";
+@import "imports/footer";
+@import "imports/promo";
+@import "imports/snipcart";

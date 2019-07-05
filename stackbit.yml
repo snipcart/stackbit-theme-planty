@@ -1,0 +1,291 @@
+stackbitVersion: ~0.2.34
+uploadDir: images
+metadata:
+  title: Snipcart
+  description: An e-commerce theme powered by Snipcart
+  author: Snipcart
+  authorURL: 'https://snipcart.com'
+models:
+  config:
+    type: config
+    label: Global site config
+    fields:
+      - type: string
+        label: Title
+        name: title
+      - type: string
+        label: Snipcart public API key
+        name: snipcart_api_key
+      - type: object
+        label: Logos
+        name: logos
+        fields:
+          - type: image
+            name: light
+            label: Light
+          - type: image
+            name: dark
+            label: Dark
+      - type: object
+        label: Styles config
+        name: styles
+        fields:
+          - type: object
+            label: Background images
+            name: backgroundImages
+            fields:
+              - type: image
+                name: primary
+                label: Primary
+              - type: image
+                name: secondary
+                label: Secondary
+              - type: image
+                name: product
+                label: Product details background
+          - type: object
+            name: colors
+            label: Colors
+            fields:
+              - type: string
+                label: Default light
+                name: default
+              - type: string
+                label: Light
+                name: light
+              - type: string
+                label: Medium
+                name: medium
+              - type: string
+                label: Dark
+                name: dark
+              - type: string
+                label: Active
+                name: active
+              - type: string
+                label: Active light
+                name: active_light
+              - type: string
+                label: Active medium
+                name: active_medium
+              - type: string
+                label: Active dark
+                name: active_dark
+              - type: string
+                label: Dark grey
+                name: dark_grey
+              - type: string
+                label: Dark grey
+                name: light_grey
+  index:
+    type: page
+    label: Home
+    template: index
+    file: index.md
+    singleInstance: true
+    fields:
+      - type: string
+        label: Title
+        name: title
+      - type: boolean
+        label: Is home page
+        name: isHome
+        hidden: true
+  store:
+    type: page
+    label: Store
+    template: store
+    file: store.md
+    singleInstance: true
+    hideContent: true
+    fields:
+      - type: string
+        label: Title
+        name: title
+  faq:
+      type: page
+      label: FAQ
+      template: faq
+      file: faq.md
+      singleInstance: true
+      fields:
+        - type: string
+          name: title
+          label: Title
+        - type: string
+          name: headline
+          label: Headline
+        - type: markdown
+          name: introduction
+          label: Introduction
+        - type: list
+          name: questions
+          label: Questions
+          description: List of questions to show on the FAQ page
+          items:
+            type: object
+            labelField: question
+            fields:
+              - type: string
+                name: question
+                label: Question
+              - type: markdown
+                name: answer
+                label: Answer
+  about:
+    type: page
+    label: About
+    template: about
+    file: about.md
+    singleInstance: true
+    fields:
+      - type: string
+        label: Title
+        name: title
+      - type: string
+        label: Headline
+        name: headline
+      - type: markdown
+        label: Introduction
+        name: introduction
+      - type: list
+        name: bulletpoints
+        label: Bulletpoints
+        description: List of bulletpoints to show on About page
+        items:
+          type: object
+          labelField: title
+          fields:
+            - type: string
+              name: title
+              label: Title
+            - type: markdown
+              name: description
+              label: Description
+            - type: image
+              name: image
+              label: Image
+        
+  categories:
+    type: page
+    label: Categories
+    hideContent: true
+    template: category
+    folder: categories
+    fields:
+      - type: string
+        name: slug
+        label: Slug
+      - type: string
+        name: title
+        label: Title
+      - type: enum
+        name: section
+        label: Section
+        options: [Store, About, Home]
+
+  promotion:
+    type: data
+    file: promotion.json
+    label: Promotion
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: subtitle
+        label: subtitle
+      - type: image
+        name: image
+        label: Image
+      - type: object
+        name: cta
+        label: Call to action
+        fields:
+          - type: string
+            name: text
+            label: Text
+          - type: string
+            name: link
+            label: Link
+  testimonials:
+    type: data
+    file: testimonials.json
+    label: Testimonials
+    fields:
+      - type: list
+        name: data
+        label: Testimonials
+        description: A list of testimonials
+        items:
+          type: object
+          labelField: text
+          fields:
+            - type: string
+              name: text
+              label: Text
+            - type: object
+              name: author
+              label: Author
+              fields:
+                - type: string
+                  name: name
+                  label: Name
+                - type: string
+                  name: location
+                  label: Location
+
+  products:
+    type: page
+    label: Product
+    template: product
+    folder: products
+    fields:
+      - type: string
+        name: id
+        label: ID
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: price
+        label: Price
+      - type: object
+        name: images
+        label: Images
+        fields:
+          - type: object
+            label: Default
+            name: default
+            fields:
+                - type: image
+                  label: Thumbnail
+                  name: thumbnail
+                - type: image
+                  label: Original
+                  name: original
+          - type: object
+            label: Featured
+            name: featured
+            fields:
+                - type: image
+                  label: Thumbnail
+                  name: thumbnail
+                - type: image
+                  label: Original
+                  name: original
+      - type: enum
+        name: category
+        label: Category
+        # To keep up to date with categories created in content/categories
+        options: [summer, europe, bigplants, cactuses]
+      - type: boolean
+        name: featured
+        label: Featured
+      - type: enum
+        name: section
+        label: Section
+        options: [Store, About, Home]

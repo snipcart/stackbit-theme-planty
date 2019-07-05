@@ -1,0 +1,41 @@
+{% extends "body.html" %}
+{% block content %}
+<main class="content">
+    <section class="content__row content__row--overlap">
+        <h2 class="content__row-title content__row-title--light">
+            <svg width="29" height="25" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28.152 3.4188C27.2129 1.75821 21.3251 -3.80243 14.4999 4.24829C7.33226 -3.80243 1.78532 1.75821 0.847792 3.4188C-0.859337 6.48936 0.164613 11.138 2.55492 13.3791L14.5015 25L26.4482 13.3791C28.8352 11.138 29.8592 6.49096 28.1521 3.4188H28.152Z" fill="#FDFDFD"/>
+            </svg>
+            Best sellers
+        </h2>
+
+        {% set products = getPages('/products') | where('featured', true) %}
+        {% set include_dict = {'products': products, 'cssClass': 'product-grid--draggable'} %}
+        {% include "featured_products.html" %}
+    </section>
+
+    <section class="content__row">
+        {% set categories = getPages('/categories') | sort_array('name', 'asc') %}
+        {% for category in categories %}
+            {% set products = getPages('/products') | where('category', category.slug) | sort_array('title', 'asc') %}
+
+            {% set count = products | length %}
+
+            {% if count > 0 %}
+                <h2 class="content__row-title">{{ category.title }}</h2>
+
+                {% set include_dict = {'products': products, 'cssClass': 'product-grid--draggable'} %}
+                {% include "product_grid.html" %}
+            {% endif %}
+        {% endfor %}
+    </section>
+
+    <section class="content__row">
+        <h2 class="content__row-title">Testimonials</h2>
+        {% set include_dict = {'testimonials': site.data.testimonials.data} %}
+        {% include "testimonials.html" %}
+    </section>
+
+    {% include "promo_section.html" %}
+</main>
+{% endblock %}

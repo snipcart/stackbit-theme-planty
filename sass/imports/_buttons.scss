@@ -1,0 +1,47 @@
+.button {
+    font-family: 'Open Sans', sans-serif;
+    width: fit-content;
+    font-weight: bold;
+    font-size: $font_size_medium;
+    border: none;
+    background-color: $color_default;
+    padding: 0.5em;
+    margin: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    &:hover {
+        background-color: $color_active;
+        svg path { fill: $color_default; }
+    }
+
+    &:active {
+        background-color: $color_active_medium;
+        outline: none;
+    }
+
+    
+    &__icon { padding: 0 0.5em; }
+    &__text { padding: 0 0.5em; }
+    
+    &--icon-only { width: 40px; height: 40px; }
+
+    &--transparent {
+        background-color: transparent;
+        &:hover {
+            background-color: transparent;
+            svg path { fill: $color_active_medium; }
+        }
+        &:active { background-color: transparent; }
+    }
+
+    &--std {
+        background-color: $color_active;
+        color: $color_default;
+        svg      { width: 18px; height: 18px; }
+        svg path { fill: $color_default; }
+        &:hover  { background-color: $color_active_medium; }
+        &:active { background-color: $color_active_dark; }
+    }
+}

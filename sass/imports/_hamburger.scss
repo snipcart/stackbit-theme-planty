@@ -1,0 +1,61 @@
+.hamburger {
+  @include bigger-than-tablet { display: none; }
+  outline: none;
+  padding: 0;
+
+  &__content {
+    background-color: $color_light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    overflow: hidden;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    background-image: $background_images_secondary;
+    background-size: auto 250%;
+    background-position: center;
+    transition: left .3s ease-in-out;
+
+    &--opened {
+      overflow: hidden;
+      left: 0;
+    }
+    &--closed { left: calc(-100vw + -100vw); }
+  }
+
+  &__options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: $font_size_medium;
+  }
+
+  &__checkout {
+    font-size: $font_size_regular;
+    margin-top: 30px;
+    margin-bottom: 70px;
+  }
+
+  &__nav {
+    text-align: center;
+  }
+
+  &__nav-item {
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+ 
+  &__nav-link {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: $font_size_large;
+  }
+}

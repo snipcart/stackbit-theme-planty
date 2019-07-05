@@ -1,0 +1,19 @@
+<ul class="product-grid product-grid--draggable">
+    {% set products = include_dict.products %}
+
+    {% for product in products %}
+        <li class="product-grid__item">
+            <figure data-href="{{ product.url | relative_url }}" style="background-image:url({{product.images.featured.thumbnail}})" class="product-grid__item-figure product-grid__item-figure--featured js-figure-link">
+                <figcaption>
+                    {% set include_dict= {'product': product, 'component': 'product-grid'} %}
+                    {% include "small_buy_button.html" %}
+                </figcaption>
+            </figure>
+            <div class="product-grid__definition">
+                <h3 class="product-grid__title"> <a href="{{ product.url | relative_url }}"> {{ product.title }} </a> </h3>
+                <span class="product-grid__category"> {{ product.category }} </span>
+                <span class="product-grid__price"> ${{ product.price }} </span>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
