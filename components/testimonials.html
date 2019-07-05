@@ -1,0 +1,11 @@
+{% set testimonials = include_dict.testimonials %}
+<div class="quotes">
+    {% for testimonial in testimonials %}
+        <div class="quotes__item">
+            <img src="{{ 'images/quotes.svg' | relative_url }}" alt="quotation mark icon" class="quotes__icon">
+            <div class="quotes__text">{{ testimonial.text }}</div>
+            <div class="quotes__author">{{ testimonial.author.name }}<span class="testimonials__location">, {{ testimonial.author.location }}</span></div>
+        </div>
+        <div class="quotes__separator"></div>
+    {% endfor %}
+</div>

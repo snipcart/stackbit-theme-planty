@@ -1,0 +1,11 @@
+<ul class="store__nav-items">
+    {% for item in site.menus.categories %}
+        {% set category = include_dict.page %}
+        {% set isActive = true if category and category.title == item.title else false %}
+        <li class="store__nav-item">
+            <a href="{{ item.url | relative_url }}" {{ classNames('store__nav-item-link', {'store__nav-item-link--active': isActive}) }}>
+                {{ item.title }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

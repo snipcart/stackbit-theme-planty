@@ -1,0 +1,30 @@
+.link {
+  display: flex;
+  align-items: center;
+  font-size: $font_size_medium;
+  border: 1px solid $color_active;
+  padding: 13px 22px;
+  border-radius: 5px; 
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: $color_active; 
+  svg { margin-left: 10px; }
+  width: fit-content;
+  background-color: transparent;
+
+
+  &--filled {
+    background-color: $color_active;
+    color: $color_default
+  }
+
+  &--light {
+    color: $color_default;
+    border: 1px solid $color_default;
+    svg { path { fill: $color_default; } }
+  }
+
+  &--borderless { border: none; }
+
+  @include smaller-than-tablet { font-size: $font_size_regular; }
+}

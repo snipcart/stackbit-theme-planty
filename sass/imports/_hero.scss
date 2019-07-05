@@ -1,0 +1,25 @@
+.hero {
+  @include container-item-properties;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 350px;
+
+  &__title {
+      font-family: 'Open Sans', sans-serif;
+      h1 {
+          color: $color_default;
+          max-width: 720px;
+          font-size: $font_size_xlarge;
+          font-weight: 900;
+          @include smaller-than-tablet { font-size: $font_size_large; }
+      }
+  }
+
+  &__link {
+      margin-top: 50px;
+  }
+}

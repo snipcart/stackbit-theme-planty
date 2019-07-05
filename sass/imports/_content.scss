@@ -1,0 +1,33 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__row {
+        @include container-item-properties;
+        margin-bottom: 50px;
+        &--direction-row { display: flex; flex-direction: row; }
+        &--overlap       { margin-top: -200px; }
+        &--bleed         { padding: 0; max-width: none; }
+        &:last-child     { margin-bottom: 0 }
+        overflow: hidden;
+    }
+
+    &__row-title {
+        color: $color_medium;
+        margin-bottom: 50px;
+        font-size: $font_size_large;
+
+        &--light {
+            svg path { fill: $color_light; }
+            color: $color_light;
+        }
+
+        &--dark {
+            svg path { fill: $color_dark; }
+            color: $color_dark;
+        }
+
+        svg { margin-right: 10px; }
+    }
+}

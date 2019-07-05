@@ -1,0 +1,147 @@
+.faq {
+  background-color: #F9F9F9;
+  &__section {
+    max-width: 600px;
+    &:nth-child(-n+2) {
+      margin-top: 40px;
+    }
+  }
+
+  &__question {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: $font_size_medium;
+    margin-bottom: 30px;
+    color: #384647;
+  }
+
+  &__answer {
+    font-style: normal;
+    font-weight: normal;
+    font-size: $font_size_regular;
+    margin-bottom: 30px;
+    line-height: 150%;
+    color: $color_light_grey;
+    &:after { 
+      content:"";
+      opacity: 0.2;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+      display: block;
+      background: $color_light_grey; 
+      height: 1px; 
+      width: 100%;
+    }
+
+    p {
+      font-size: $font_size_regular;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 30px;
+      margin-top: 30px;
+    }
+
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    background-color: $color_dark;
+    @include smaller-than-tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__contact-image {
+    width: 0;
+    flex: 0.2;
+    object-fit: cover;
+    @include smaller-than-tablet {
+      max-height: 300px;
+      width: initial;
+      flex: initial;
+    }
+  }
+
+  &__contact-title {
+    line-height: 56px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: $font_size_xlarge;
+    color: $color_dark_grey;
+    margin-bottom: 50px;
+    @include smaller-than-tablet {
+      font-size: $font_size_medium;
+      margin-bottom: 25px;
+      line-height: 29px;
+    }
+  }
+
+  &__contact-text-container {
+    padding: 100px;
+    width: 0;
+    flex: 0.8;
+    background-color: $color_default;
+    margin-bottom: 50px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: $font_size_regular;
+    line-height: 150%;
+    color: $color_light_grey;
+    @include smaller-than-tablet {
+      margin-bottom: 0;
+      padding: 25px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      width: initial;
+      flex: initial;
+    }
+  }
+
+  &__contact-info-container {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: repeat(1fr, 2);
+    grid-gap: 25px;
+    grid-column-gap: 100px;
+    @include smaller-than-tablet {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      p { margin-bottom: 25px; }
+      a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  &__contact-address {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  &__contact-telephone {
+    margin-top: auto;
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  &__contact-email {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  &__map-link {
+    grid-row: 2;
+    grid-column: 2;
+  }
+}

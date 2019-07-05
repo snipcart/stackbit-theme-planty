@@ -1,0 +1,56 @@
+{% extends "body.html" %}
+{% block content %}
+    {% set category = getPages('/categories') | where('slug', page.category) | first %}
+    <main class="content">
+        <section class="product content__row content__row--bleed">  
+            <div class="product__background-left-overlay"></div>
+            <div class="product__background-left"></div>
+            <div class="product__background-right"></div>
+            <div class="product__header">
+                <a href="/store" class="product__back-to-store-link">
+                    <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.73859 4.30914H19.75V5.59286H2.63961L6.06986 8.98864L5.17449 9.875L0.25 5L5.17449 0.125L6.06986 1.01136L2.73859 4.30914Z" fill="white"/>
+                    </svg>                        
+                    see all products
+                </a>
+            </div>
+            <figure class="product__figure">
+                <img class="product__image" src="{{ page.images.default.original }}" class="product__image" />
+            </figure>
+            <div class="product__details">
+                <h1 class="product__title">
+                    {{ page.title }}
+                </h1>
+                <h2 class="product__category"> 
+                    <a href="{{ category.url | relative_url }}"> {{ category.title }} </a>
+                </h2>
+                <div class="product__price">
+                    ${{ page.price }}
+                </div>
+
+                <article class="product__description">
+                    {{ page.description }}
+                </article>
+
+                {% set include_dict = {'product': page} %}
+                {% include "buy_button.html" %}
+            </div>
+        </section>
+
+        <section class="content__row">
+            <h2 class="content__row-title">Related</h2>
+            {% set products = getPages('/products') | where('category', category.slug) | sort_array('title', 'asc') | where('id', '!=', page.id) %}
+            {% set include_dict = {'products': products, 'cssClass': 'product-grid--draggable'} %}
+            {% include "product_grid.html" %}
+        </section>
+
+        <section class="content__row content__row--bleed product__back-to-store">
+            <a href="/store" class="link link--light link--borderless">
+                <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.73859 4.30914H19.75V5.59286H2.63961L6.06986 8.98864L5.17449 9.875L0.25 5L5.17449 0.125L6.06986 1.01136L2.73859 4.30914Z" fill="white"/>
+                </svg>                        
+                see all products
+            </a>
+        </section>
+    </main>
+{% endblock %}

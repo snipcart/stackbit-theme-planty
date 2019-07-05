@@ -1,0 +1,38 @@
+.footer {
+  @include container-properties;
+  background-color: $color_dark;
+
+  &__container { 
+      @include container-item-properties;
+      padding-top: 50px;
+      padding-bottom: 50px; 
+      display: flex;
+  }
+
+  
+  &__nav {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      @include smaller-than-tablet { display: none; }
+  }
+
+  &__nav-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:not(:last-child) { margin-right: 40px; }
+  }
+  
+  &__logo { height: 45px; margin-right: 65px; }
+  &__nav-link { color: $color_medium; font-weight: bold; }
+
+  &__legal-notice {
+      display: flex;
+      align-items: center;
+      color: $color_medium;
+      font-weight: bold;
+      margin-left: auto;
+  }
+}

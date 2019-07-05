@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block body %} 
+
+    {% set title = page.title %}
+
+    {% if page.section %}
+        {% set title = page.section %}
+    {% endif %}
+
+    {% if page.basename == "index.md" %}
+        <div class="header-wrapper">
+            <div class="header-wrapper__overlay">
+                {% set include_dict = {'page': page} %}
+                {% include "hero.html" %}
+                {% set include_dict = {'page': page} %}
+                {% include "header.html" %}
+            </div>
+        </div>
+    {% else %}
+        {% set include_dict = {'page': page} %}
+        {% include "header.html" %}
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+    {% set include_dict = {'menu': site.menus.main } %}
+    {% include "footer.html" %}
+{% endblock %}

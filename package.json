@@ -1,0 +1,37 @@
+{
+  "name": "stackbit-snipcart-theme",
+  "version": "1.0.0",
+  "description": "Stackbit theme for e-commerce powered by Snipcart",
+  "main": "index.js",
+  "watch": {
+    "build": {
+      "patterns": "*",
+      "extensions": "*",
+      "ignore": ["public", "node_modules", "package.json"]
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "unibit build",
+    "dev": "npm-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snipcart/stackbit-theme-planty"
+  },
+  "keywords": [
+    "ecommerce",
+    "stackbit",
+    "theme",
+    "snipcart"
+  ],
+  "author": "Snipcart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snipcart/stackbit-theme-planty/issues"
+  },
+  "homepage": "https://github.com/snipcart/stackbit-theme-planty#readme",
+  "devDependencies": {
+    "npm-watch": "^0.6.0"
+  }
+}

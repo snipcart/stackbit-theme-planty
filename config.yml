@@ -1,0 +1,28 @@
+baseurl: "/"
+title: 'Snipcart'
+params:
+  logos:
+    dark: 'images/logo.svg'
+    light: 'images/logo-white.svg'
+  snipcart_api_key: 'YTlkMmJlNjQtYWIwMi00MDk0LTlkYmEtZTE0Y2IxMzM3NjM5NjM2OTc5MzgxOTUwNzM4Njc1'
+  styles:  
+    backgroundImages:
+      primary: images/header.jpg
+      secondary: images/leaf-light-grey.svg
+      product: images/leaf.svg
+    colors:
+      default: '#FFFFFF'
+      light: '#F0F0F0'
+      medium: '#6B797A'
+      dark: '#384647'
+      active: '#88DD9B'
+      active_light: '#C0FDB6'
+      active_medium: '#5C9174'
+      active_dark: '#547567'
+      dark_grey: '#273132'
+      light_grey: '#6B797A'
+sass:
+  input_file: sass/main.scss.njk
+  output_file: assets/css/main.css
+  outputStyle: nested
+  precision: 10

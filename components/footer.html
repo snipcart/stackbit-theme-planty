@@ -1,0 +1,18 @@
+{% set menu = include_dict.menu %}
+<footer class="footer">
+    <div class="footer__container">
+        <a href="/">
+            <img src="{{ site.params.logos.light | relative_url }}" alt="Planty logo" class="footer__logo">
+        </a>
+        <ul class="footer__nav">
+            {% for item in menu%}
+            <li class="footer__nav-item">
+                <a href="{{ item.url | relative_url }}" {% if item.title == page.title %}class="footer__nav-link footer__nav-link--active" {% else %}class="footer__nav-link"{% endif %}>
+                {{ item.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="footer__legal-notice"> Copyright 2019 Planty Inc. All rights reserved.</div>
+    </div>
+</footer>
