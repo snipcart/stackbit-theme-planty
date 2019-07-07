@@ -1,6 +1,6 @@
 {% extends "body.html" %}
 {% block content %}
-    {% set category = getPages('/categories') | where('slug', page.category) | first %}
+    {% set category = getPages('/product_categories') | where('slug', page.category) | first %}
     <main class="content">
         <section class="product content__row content__row--bleed">  
             <div class="product__background-left-overlay"></div>

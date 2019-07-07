@@ -15,7 +15,7 @@
     </section>
 
     <section class="content__row">
-        {% set categories = getPages('/categories') | sort_array('name', 'asc') %}
+        {% set categories = getPages('/product_categories') | sort_array('name', 'asc') %}
         {% for category in categories %}
             {% set products = getPages('/products') | where('category', category.slug) | sort_array('title', 'asc') %}
 

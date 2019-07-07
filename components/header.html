@@ -1,14 +1,14 @@
 {% set data = include_dict.page %}
 {% set isHome = true if data.basename == 'index.md' else false %}
+{% set isProduct = true if data.template == "product" else false %}
 
 <header class="header">
     <nav {{ classNames('nav', {'nav--light': isHome, 'nav--dark': isHome != true}) }}>
         <div class="nav__logo">
             <a href="/">
-                <!-- FIXME: Can you use || operators? Seems to cause issues with rendering... -->
-                {% if isHome == true %}
+                {% if isHome %}
                   <img class="nav__logo-image" src="{{ site.params.logos.light | relative_url }}" /> 
-                {% elseif data.template == "product" %}
+                {% elseif isProduct %}
                   <img class="nav__logo-image" src="{{ site.params.logos.light | relative_url }}" /> 
                 {% else %}
                   <img class="nav__logo-image" src="{{ site.params.logos.dark | relative_url }}" /> 

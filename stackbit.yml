@@ -166,12 +166,12 @@ models:
               name: image
               label: Image
         
-  categories:
+  productCategories:
     type: page
     label: Categories
     hideContent: true
-    template: category
-    folder: categories
+    template: product_category
+    folder: product_categories
     fields:
       - type: string
         name: slug

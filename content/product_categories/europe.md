@@ -1,7 +1,7 @@
 ---
 title: Plants from Europe
 slug: europe
-template: category
+template: product_category
 section: Store
 menus:
     categories:
