@@ -18,9 +18,7 @@
                     <li class="product-grid__item">
                         <figure data-href="{{ product.url | relative_url }}" style="background-image:url({{ product.images.default.thumbnail }})" class="product-grid__item-figure js-figure-link">
                             <figcaption>
-                                {% set component = 'product-grid' %}
-
-                                <button class="{{ component }}__item-buy button button--icon-only snipcart-add-item"
+                                <button class="product-grid__item-buy button button--icon-only snipcart-add-item"
                                     data-item-name="{{ product.title }}"
                                     data-item-url="{{ product.url }}"
                                     data-item-price="{{ product.price }}"
