@@ -2,6 +2,8 @@
 
 # Planty - Stackbit theme
 
+[![Create with Stackbit](https://assets.stackbit.com/badge/create-with-stackbit.svg)](https://app.stackbit.com/create?theme=https://github.com/snipcart/stackbit-theme-planty&ssg=jekyll)
+
 Planty is an e-commerce ready custom theme for [Stackbit](https://www.stackbit.com/) created by [Snipcart](http://bit.ly/2YB7AUL).
 
 You can read more about Stackbit and our experience building this theme [here](http://bit.ly/2YAvGix).
