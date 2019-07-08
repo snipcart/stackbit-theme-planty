@@ -48,9 +48,6 @@
         {% for category in categories %}
             {% set products = getPages('/products') | where('category', category.slug) | sort_array('title', 'asc') %}
 
-            {% set count = products | length %}
-
-            {% if count > 0 %}
                 <h2 class="content__row-title">{{ category.title }}</h2>
 
                 <ul class="product-grid product-grid--draggable">
@@ -86,7 +83,6 @@
                         </li>
                     {% endfor %}
                 </ul>
-            {% endif %}
         {% endfor %}
     </section>
 
