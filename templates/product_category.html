@@ -13,18 +13,12 @@
             
             <section class="store__products">
                 {% set products = getPages('/products') | where('category', page.slug) | sort_array('name', 'asc') %}
-                {% set include_dict = {'products': products, 'cssClass': 'store__product-grid'} %}
-                {% set include_dict = {'products': products, 'cssClass': 'product-grid--draggable'} %}
-                {% set listCssClass = include_dict.cssClass %}
-                <ul class="product-grid {% if listCssClass %}{{ listCssClass }}{%endif%}">
-                    {% set products = include_dict.products %}
+                <ul class="product-grid store__product-grid">
                     {% for product in products %}
                         <li class="product-grid__item">
                             <figure data-href="{{ product.url | relative_url }}" style="background-image:url({{ product.images.default.thumbnail }})" class="product-grid__item-figure js-figure-link">
                                 <figcaption>
-                                    {% set include_dict= {'product': product, 'component': 'product-grid'} %}
-                                    {% set product = include_dict.product %}
-                                    {% set component = include_dict.component %}
+                                    {% set component = 'product-grid' %}
 
                                     <button class="{{ component }}__item-buy button button--icon-only snipcart-add-item"
                                         data-item-name="{{ product.title }}"
