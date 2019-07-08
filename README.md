@@ -9,7 +9,7 @@ You can read more about Stackbit and our experience building this theme [here](h
 This theme can be used to create a JAMstack e-commerce site through Stackbit's platform. You'll get
 everything you need from products listing, categorization, FAQ, shopping cart, merchant dashboard, etc.
 
-You can see it in action right [here](https://planty-faa9e.netlify.com).
+You can see it in action right [here](https://stackbit-theme-planty.netlify.com).
 
 ## How to get started
 
