@@ -12,7 +12,7 @@ images:
         thumbnail: /images/plant7-featured.jpg
         original: /images/plant7-featured-lg.jpg
 featured: false
-category: bigplants
+product_category: bigplants
 section: Store
 ---
 

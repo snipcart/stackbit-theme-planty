@@ -277,7 +277,7 @@ models:
                   label: Original
                   name: original
       - type: enum
-        name: category
+        name: product_category
         label: Category
         # To keep up to date with categories created in content/categories
         options: [summer, europe, bigplants, cactuses]

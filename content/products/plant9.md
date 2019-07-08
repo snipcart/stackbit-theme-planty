@@ -12,7 +12,7 @@ images:
         thumbnail: /images/plant9-featured.jpg
         original: /images/plant9-featured-lg.jpg
 featured: true
-category: cactuses
+product_category: cactuses
 section: Store
 ---
 

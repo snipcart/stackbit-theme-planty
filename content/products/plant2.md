@@ -12,7 +12,7 @@ images:
         thumbnail: /images/plant2-featured.jpg
         original: /images/plant2-featured-lg.jpg
 featured: true
-category: summer
+product_category: summer
 section: Store
 ---
 

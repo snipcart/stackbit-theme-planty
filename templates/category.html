@@ -12,7 +12,7 @@
             </nav>
             
             <section class="store__products">
-                {% set products = getPages('/products') | where('category', page.slug) | sort_array('name', 'asc') %}
+                {% set products = getPages('/products') | where('product_category', page.slug) | sort_array('name', 'asc') %}
                 {% set include_dict = {'product_pages': products, 'cssClass': 'store__product-grid'} %}
                 {% include "product_grid.html" %}
             </section>

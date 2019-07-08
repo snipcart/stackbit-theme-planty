@@ -12,7 +12,7 @@ images:
         thumbnail: /images/plant8-featured.jpg
         original: /images/plant8-featured-lg.jpg
 featured: false
-category: europe
+product_category: europe
 section: Store
 ---
 
