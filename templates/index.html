@@ -10,7 +10,7 @@
         </h2>
 
         {% set products = getPages('/products') | where('featured', true) %}
-        {% set include_dict = {'products': products, 'cssClass': 'product-grid--draggable'} %}
+        {% set include_dict = {'product_pages': products, 'cssClass': 'product-grid--draggable'} %}
         {% include "featured_products.html" %}
     </section>
 
@@ -24,7 +24,7 @@
             {% if count > 0 %}
                 <h2 class="content__row-title">{{ category.title }}</h2>
 
-                {% set include_dict = {'products': products, 'cssClass': 'product-grid--draggable'} %}
+                {% set include_dict = {'product_pages': products, 'cssClass': 'product-grid--draggable'} %}
                 {% include "product_grid.html" %}
             {% endif %}
         {% endfor %}

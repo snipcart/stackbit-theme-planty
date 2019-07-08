@@ -32,7 +32,7 @@
                     {{ page.description }}
                 </article>
 
-                {% set include_dict = {'product': page} %}
+                {% set include_dict = {'product_page': page} %}
                 {% include "buy_button.html" %}
             </div>
         </section>
@@ -40,7 +40,7 @@
         <section class="content__row">
             <h2 class="content__row-title">Related</h2>
             {% set products = getPages('/products') | where('category', category.slug) | sort_array('title', 'asc') | where('id', '!=', page.id) %}
-            {% set include_dict = {'products': products, 'cssClass': 'product-grid--draggable'} %}
+            {% set include_dict = {'product_pages': products, 'cssClass': 'product-grid--draggable'} %}
             {% include "product_grid.html" %}
         </section>
 

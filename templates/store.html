@@ -11,7 +11,7 @@
         </nav>
         <section class="store__products">
             {% set products = getPages('/products') | sort_array('name', 'asc') %}
-            {% set include_dict = {'products': products, 'cssClass': 'store__product-grid'} %}
+            {% set include_dict = {'product_pages': products, 'cssClass': 'store__product-grid'} %}
             {% include "product_grid.html" %}
         </section>
     </div>
@@ -24,7 +24,7 @@
             Best Sellers
         </h2>
         {% set products = getPages('/products') | where('featured', true) %}
-        {% set include_dict = {'products': products } %}
+        {% set include_dict = {'product_pages': products } %}
         {% include "featured_products.html" %}
     </section>
 

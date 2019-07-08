@@ -1,12 +1,12 @@
 {% set listCssClass = include_dict.cssClass %}
 
 <ul class="product-grid {% if listCssClass %}{{ listCssClass }}{%endif%}">
-    {% set products = include_dict.products %}
+    {% set products = include_dict.product_pages %}
     {% for product in products %}
         <li class="product-grid__item">
             <figure data-href="{{ product.url | relative_url }}" style="background-image:url({{ product.images.default.thumbnail }})" class="product-grid__item-figure js-figure-link">
                 <figcaption>
-                    {% set include_dict= {'product': product, 'component': 'product-grid'} %}
+                    {% set include_dict= {'product_page': product, 'component': 'product-grid'} %}
                     {% include "small_buy_button.html" %}
                 </figcaption>
             </figure>
