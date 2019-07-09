@@ -75,7 +75,7 @@ models:
                 label: Dark grey
                 name: dark_grey
               - type: string
-                label: Dark grey
+                label: Light grey
                 name: light_grey
   index:
     type: page
