@@ -4,7 +4,9 @@
     {% set products = include_dict.products %}
     {% for product in products %}
         <li class="product-grid__item">
-            <figure data-href="{{ product.url | relative_url }}" style="background-image:url({{ product.images.default.thumbnail }})" class="product-grid__item-figure js-figure-link">
+            <figure data-href="{{ product.url | relative_url }}" class="product-grid__item-figure js-figure-link">
+                {% set include_dict = {'image': product.images.default.thumbnail, 'alt': product.title, 'cssClass': 'product-grid__item-image'} %}
+                {% include "picture.html" %}
                 <figcaption>
                     {% set include_dict= {'product': product, 'component': 'product-grid'} %}
                     {% include "small_buy_button.html" %}

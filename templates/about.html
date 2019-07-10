@@ -5,7 +5,8 @@
   {% include "static_header.html" %}
   {% for bulletpoint in page.bulletpoints %}
     <section class="content__row about__section">
-      <img class="about__section-image" src="{{ bulletpoint.image | relative_url }}" alt="">
+      {% set include_dict = {'image': bulletpoint.image, 'alt': bulletpoint.title, 'cssClass': 'about__section-image'} %}
+      {% include "picture.html" %}
       <div class="about__section-content-container">
         <h2 class="about__section-title">{{ bulletpoint.title }}</h2>
         <div class="about__section-content">

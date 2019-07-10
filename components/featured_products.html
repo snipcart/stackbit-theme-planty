@@ -3,7 +3,9 @@
 
     {% for product in products %}
         <li class="product-grid__item">
-            <figure data-href="{{ product.url | relative_url }}" style="background-image:url({{product.images.featured.thumbnail}})" class="product-grid__item-figure product-grid__item-figure--featured js-figure-link">
+            <figure data-href="{{ product.url | relative_url }}" class="js-figure-link product-grid__item-figure js-figure-link">
+                {% set include_dict = {'image': product.images.featured.thumbnail, 'alt': product.title, 'cssClass': 'product-grid__item-image product-grid__item-image--featured'} %}
+                {% include "picture.html" %}
                 <figcaption>
                     {% set include_dict= {'product': product, 'component': 'product-grid'} %}
                     {% include "small_buy_button.html" %}

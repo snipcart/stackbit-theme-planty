@@ -6,11 +6,19 @@ title: Sed consectetur
 description: Fusce sed tortor id diam rhoncus accumsan.
 images:
     default:
-        thumbnail: /images/plant7.jpg
-        original: /images/plant7-lg.jpg
+        thumbnail:
+            optimized: /images/plant7.webp
+            fallback: /images/plant7.jpg
+        original:
+            optimized: /images/plant7-lg.webp
+            fallback: /images/plant7-lg.jpg
     featured: 
-        thumbnail: /images/plant7-featured.jpg
-        original: /images/plant7-featured-lg.jpg
+        thumbnail:
+            optimized: /images/plant7-featured.webp
+            fallback: /images/plant7-featured.jpg
+        original:
+            optimized: /images/plant7-featured-lg.webp
+            fallback: /images/plant7-featured-lg.jpg
 featured: false
 category: bigplants
 section: Store

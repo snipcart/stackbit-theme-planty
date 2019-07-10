@@ -6,11 +6,19 @@ title: Curabitur eu tempor
 description: Nulla non pretium metus, vitae finibus lectus.
 images:
     default:
-        thumbnail: /images/plant3.jpg
-        original: /images/plant3-lg.jpg
+        thumbnail:
+            optimized: /images/plant3.webp
+            fallback: /images/plant3.jpg
+        original:
+            optimized: /images/plant3-lg.webp
+            fallback: /images/plant3-lg.jpg
     featured: 
-        thumbnail: /images/plant3-featured.jpg
-        original: /images/plant3-featured-lg.jpg
+        thumbnail:
+            optimized: /images/plant3-featured.webp
+            fallback: /images/plant3-featured.jpg
+        original:
+            optimized: /images/plant3-featured-lg.webp
+            fallback: /images/plant3-featured-lg.jpg
 featured: false
 category: cactuses
 section: Store

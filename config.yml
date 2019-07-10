@@ -2,14 +2,24 @@ baseurl: "/"
 title: 'Snipcart'
 params:
   logos:
-    dark: 'images/logo.svg'
-    light: 'images/logo-white.svg'
+    dark:
+      optimized: 'images/logo.svg'
+      fallback: 'images/logo.svg'
+    light: 
+      optimized: 'images/logo-white.svg'
+      fallback: 'images/logo-white.svg'
   snipcart_api_key: 'YTlkMmJlNjQtYWIwMi00MDk0LTlkYmEtZTE0Y2IxMzM3NjM5NjM2OTc5MzgxOTUwNzM4Njc1'
   styles:  
     backgroundImages:
-      primary: images/header.jpg
-      secondary: images/leaf-light-grey.svg
-      product: images/leaf.svg
+      primary: 
+        optimized: images/header.webp
+        fallback: images/header.jpg
+      secondary:
+        optimized: images/leaf-light-grey.svg
+        fallback: images/leaf-light-grey.svg
+      product:
+        optimized: images/leaf.svg
+        fallback: images/leaf.svg
     colors:
       default: '#FFFFFF'
       light: '#F0F0F0'

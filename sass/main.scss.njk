@@ -12,9 +12,14 @@ $color_active_dark: {{ colors.active_dark }};
 $color_dark_grey: {{ colors.dark_grey }};
 $color_light_grey: {{ colors.light_grey }};
 
-$background_images_primary: url(../../{{ backgroundImages.primary }});
-$background_images_secondary: url(../../{{ backgroundImages.secondary }});
-$background_images_product: url(../../{{ backgroundImages.product }});
+$background_images_primary: url(../../{{ backgroundImages.primary.fallback }});
+$background_images_primary_opt: url(../../{{ backgroundImages.primary.optimized }});
+
+$background_images_secondary: url(../../{{ backgroundImages.secondary.fallback }});
+$background_images_secondary_opt: url(../../{{ backgroundImages.secondary.optimized }});
+
+$background_images_product: url(../../{{ backgroundImages.product.fallback }});
+$background_images_product_opt: url(../../{{ backgroundImages.product.optimized }});
 
 $font_size_small: 18px;
 $font_size_xxlarge: 64px;

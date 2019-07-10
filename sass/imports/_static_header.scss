@@ -10,7 +10,12 @@
     justify-content: center;
     align-items: center;
     background-color: $color_default;
-    background-image: $background_images_secondary;
+    .no-webp & {
+      background-image: $background_images_secondary;
+    }
+    .webp & {
+      background-image: $background_images_secondary_opt;
+    }
     background-size: auto 250%;
     background-position: center;
     overflow-y: visible;
