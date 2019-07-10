@@ -6,11 +6,19 @@ title: Nulla suscipit
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit velit lectus, vitae efficitur quam mollis eget. Integer porta at nisl eget tincidunt. 
 images:
     default:
-        thumbnail: /images/plant1.jpg
-        original: /images/plant1-lg.jpg
+        thumbnail:
+            optimized: /images/plant1.webp
+            fallback: /images/plant1.jpg
+        original:
+            optimized: /images/plant1-lg.webp
+            fallback: /images/plant1-lg.jpg
     featured: 
-        thumbnail: /images/plant1-featured.jpg
-        original: /images/plant1-featured-lg.jpg
+        thumbnail:
+            optimized: /images/plant1-featured.webp
+            fallback: /images/plant1-featured.jpg
+        original:
+            optimized: /images/plant1-featured-lg.webp
+            fallback: /images/plant1-featured-lg.jpg
 featured: true
 category: summer
 section: Store

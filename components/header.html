@@ -7,11 +7,14 @@
             <a href="/">
                 <!-- FIXME: Can you use || operators? Seems to cause issues with rendering... -->
                 {% if isHome == true %}
-                  <img class="nav__logo-image" src="{{ site.params.logos.light | relative_url }}" /> 
+                    {% set include_dict = {'image': site.params.logos.light, 'cssClass': 'footer_logo nav__logo-image', 'alt': 'Planty logo'} %}
+                    {% include "picture.html" %}
                 {% elseif data.template == "product" %}
-                  <img class="nav__logo-image" src="{{ site.params.logos.light | relative_url }}" /> 
+                    {% set include_dict = {'image': site.params.logos.light, 'cssClass': 'footer_logo nav__logo-image', 'alt': 'Planty logo'} %}
+                    {% include "picture.html" %}
                 {% else %}
-                  <img class="nav__logo-image" src="{{ site.params.logos.dark | relative_url }}" /> 
+                    {% set include_dict = {'image': site.params.logos.dark, 'cssClass': 'footer_logo nav__logo-image', 'alt': 'Planty logo'} %}
+                    {% include "picture.html" %}
                 {% endif %}
             </a>
         </div>

@@ -20,12 +20,26 @@ models:
         label: Logos
         name: logos
         fields:
-          - type: image
+          - type: object
             name: light
             label: Light
-          - type: image
+            fields:
+              - type: image
+                name: optimized
+                label: Optimized (WEBP or similar)
+              - type: image
+                name: fallback
+                label: Fallback (JPG or PNG)
+          - type: object
             name: dark
             label: Dark
+            fields:
+              - type: image
+                name: optimized
+                label: Optimized (WEBP or similar)
+              - type: image
+                name: fallback
+                label: Fallback (JPG or PNG)
       - type: object
         label: Styles config
         name: styles
@@ -34,15 +48,36 @@ models:
             label: Background images
             name: backgroundImages
             fields:
-              - type: image
+              - type: object
                 name: primary
                 label: Primary
-              - type: image
+                fields:
+                  - type: image
+                    name: optimized
+                    label: Optimized (WEBP or similar)
+                  - type: image
+                    name: fallback
+                    label: Fallback (JPG or PNG)
+              - type: object
                 name: secondary
                 label: Secondary
-              - type: image
+                fields:
+                  - type: image
+                    name: optimized
+                    label: Optimized (WEBP or similar)
+                  - type: image
+                    name: fallback
+                    label: Fallback (JPG or PNG)
+              - type: object
                 name: product
                 label: Product details background
+                fields:
+                  - type: image
+                    name: optimized
+                    label: Optimized (WEBP or similar)
+                  - type: image
+                    name: fallback
+                    label: Fallback (JPG or PNG)
           - type: object
             name: colors
             label: Colors
@@ -162,9 +197,16 @@ models:
             - type: markdown
               name: description
               label: Description
-            - type: image
+            - type: object
               name: image
               label: Image
+              fields:
+                - type: image
+                  name: optimized
+                  label: Optimized (WEBP or similar)
+                - type: image
+                  name: fallback
+                  label: Fallback (JPG or PNG)
         
   categories:
     type: page
@@ -195,9 +237,16 @@ models:
       - type: string
         name: subtitle
         label: subtitle
-      - type: image
+      - type: object
         name: image
         label: Image
+        fields:
+          - type: image
+            name: optimized
+            label: Optimized (WEBP or similar)
+          - type: image
+            name: fallback
+            label: Fallback (JPG or PNG)
       - type: object
         name: cta
         label: Call to action
@@ -261,22 +310,50 @@ models:
             label: Default
             name: default
             fields:
-                - type: image
-                  label: Thumbnail
+                - type: object
                   name: thumbnail
-                - type: image
-                  label: Original
+                  label: Thumbnail
+                  fields:
+                    - type: image
+                      name: optimized
+                      label: Optimized (WEBP or similar)
+                    - type: image
+                      name: fallback
+                      label: Fallback (JPG or PNG)
+                - type: object  
                   name: original
+                  label: Original
+                  fields:
+                    - type: image
+                      name: optimized
+                      label: Optimized (WEBP or similar)
+                    - type: image
+                      name: fallback
+                      label: Fallback (JPG or PNG)
           - type: object
             label: Featured
             name: featured
             fields:
-                - type: image
-                  label: Thumbnail
-                  name: thumbnail
-                - type: image
-                  label: Original
-                  name: original
+              - type: object
+                name: thumbnail
+                label: Thumbnail
+                fields:
+                  - type: image
+                    name: optimized
+                    label: Optimized (WEBP or similar)
+                  - type: image
+                    name: fallback
+                    label: Fallback (JPG or PNG)
+              - type: object  
+                name: original
+                label: Original
+                fields:
+                  - type: image
+                    name: optimized
+                    label: Optimized (WEBP or similar)
+                  - type: image
+                    name: fallback
+                    label: Fallback (JPG or PNG)
       - type: enum
         name: category
         label: Category

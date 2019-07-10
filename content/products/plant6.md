@@ -6,11 +6,19 @@ title: Donec finibus
 description: Cras molestie faucibus ipsum ut vulputate.
 images:
     default:
-        thumbnail: /images/plant6.jpg
-        original: /images/plant6-lg.jpg
+        thumbnail:
+            optimized: /images/plant6.webp
+            fallback: /images/plant6.jpg
+        original:
+            optimized: /images/plant6-lg.webp
+            fallback: /images/plant6-lg.jpg
     featured: 
-        thumbnail: /images/plant6-featured.jpg
-        original: /images/plant6-featured-lg.jpg
+        thumbnail:
+            optimized: /images/plant6-featured.webp
+            fallback: /images/plant6-featured.jpg
+        original:
+            optimized: /images/plant6-featured-lg.webp
+            fallback: /images/plant6-featured-lg.jpg
 featured: false
 category: bigplants
 section: Store

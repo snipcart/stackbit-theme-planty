@@ -6,11 +6,19 @@ title: Fusce sagittis
 description: Nulla diam diam, maximus gravida efficitur eu, ultricies quis orci.
 images:
     default:
-        thumbnail: /images/plant9.jpg
-        original: /images/plant9-lg.jpg
+        thumbnail:
+            optimized: /images/plant9.webp
+            fallback: /images/plant9.jpg
+        original:
+            optimized: /images/plant9-lg.webp
+            fallback: /images/plant9-lg.jpg
     featured: 
-        thumbnail: /images/plant9-featured.jpg
-        original: /images/plant9-featured-lg.jpg
+        thumbnail:
+            optimized: /images/plant9-featured.webp
+            fallback: /images/plant9-featured.jpg
+        original:
+            optimized: /images/plant9-featured-lg.webp
+            fallback: /images/plant9-featured-lg.jpg
 featured: true
 category: cactuses
 section: Store

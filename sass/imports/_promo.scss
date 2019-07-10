@@ -19,7 +19,12 @@
       padding: 80px;
       color: $color_default;
       background-color: $color_active;
-      background-image: $background_images_product;
+      .no-webp & {
+        background-image: $background_images_product;
+      }
+      .webp & {
+        background-image: $background_images_product_opt;
+      }
       background-size: auto 400%;
       background-position: center;
   }

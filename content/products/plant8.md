@@ -6,11 +6,19 @@ title: Fusce sed
 description: In cursus sagittis eros non congue.
 images:
     default:
-        thumbnail: /images/plant8.jpg
-        original: /images/plant8-lg.jpg
+        thumbnail:
+            optimized: /images/plant8.webp
+            fallback: /images/plant8.jpg
+        original:
+            optimized: /images/plant8-lg.webp
+            fallback: /images/plant8-lg.jpg
     featured: 
-        thumbnail: /images/plant8-featured.jpg
-        original: /images/plant8-featured-lg.jpg
+        thumbnail:
+            optimized: /images/plant8-featured.webp
+            fallback: /images/plant8-featured.jpg
+        original:
+            optimized: /images/plant8-featured-lg.webp
+            fallback: /images/plant8-featured-lg.jpg
 featured: false
 category: europe
 section: Store

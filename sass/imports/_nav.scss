@@ -93,7 +93,12 @@
         align-items: center;
     }
 
-    background-image: $background_images_primary;
+    .no-webp & {
+        background-image: $background_images_primary;
+    }
+    .webp & {
+        background-image: $background_images_primary_opt;
+    }
     background-repeat: no-repeat;
     background-size: cover;
 }

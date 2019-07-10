@@ -2,7 +2,8 @@
 
 <li class="product__card">
     <figure class="product__card__image">
-        <img src="{{ product.images.default.thumbnail }}" alt="{{ product.title }}" />
+        {% set include_dict = {'image': product.images.default.thumbnail, 'alt': product.title} %}
+        {% include "picture.html" %}
     </figure>
     <h2 class="product__card__title">
         {{ product.title }}
