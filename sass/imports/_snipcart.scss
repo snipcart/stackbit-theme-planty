@@ -3,7 +3,7 @@
     border-top: solid 1px $color_light;
 }
 .snipcart {    
-    &__cart__button--highlight {
+    &-cart-button--highlight {
         background-image: none;
         background-color: $color_active;
         
@@ -12,7 +12,7 @@
         }
     }
 
-    &__cart__content {
+    &-cart__content {
         background-color: transparent;
     }
     
@@ -22,11 +22,27 @@
         }
     }
 
-    &__form__input:focus {
+    &__icon--blue-light {
+        path {
+            fill: $color_active;
+        }
+    }
+
+    &-form-input:focus {
         border-color: $color_active;
     }
 
-    &__box__badge--highlight {
+    &-discount-box__form {
+        border-color: $color_active;
+    }
+
+    &-discount-box__button {
+        &:focus {
+            border-color: $color_active;
+        }
+    }
+
+    &__box--badge-highlight {
         background-image: none;
         background-color: $color_active;
     }
@@ -35,7 +51,7 @@
         color: $color_active;
     }
 
-    &__actions__link {
+    &__actions--link {
         color: $color_active_medium;
     }
 

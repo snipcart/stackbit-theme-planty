@@ -14,6 +14,12 @@ models:
         label: Title
         name: title
       - type: string
+        label: Snipcart JavaScript file URL
+        name: snipcart_js
+      - type: string
+        label: Snipcart CSS file URL
+        name: snipcart_css
+      - type: string
         label: Snipcart public API key
         name: snipcart_api_key
       - type: object

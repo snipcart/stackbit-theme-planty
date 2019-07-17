@@ -687,7 +687,6 @@ document.addEventListener('mouseout', _ => draggableItems.forEach(element => ele
 // FIGURE LINKS
 document.querySelectorAll('.js-figure-link').forEach((l) => {
   l.addEventListener('click', _ => {
-    debugger;
     const snipcartButton = _.target.closest('.snipcart-add-item');
     if (!snipcartButton) {
       const link = _.target.closest('figure').dataset['href'];
