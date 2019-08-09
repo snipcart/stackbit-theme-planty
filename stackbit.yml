@@ -84,6 +84,16 @@ models:
                   - type: image
                     name: fallback
                     label: Fallback (JPG or PNG)
+              - type: object
+                name: cart
+                label: Cart background
+                fields:
+                  - type: image
+                    name: optimized
+                    label: Optimized (WEBP or similar)
+                  - type: image
+                    name: fallback
+                    label: Fallback (JPG or PNG)
           - type: object
             name: colors
             label: Colors
