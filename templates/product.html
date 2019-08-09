@@ -9,7 +9,7 @@
             <div class="product__header">
                 <a href="/store" class="product__back-to-store-link">
                     <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.73859 4.30914H19.75V5.59286H2.63961L6.06986 8.98864L5.17449 9.875L0.25 5L5.17449 0.125L6.06986 1.01136L2.73859 4.30914Z" fill="white"/>
+                        <path d="M2.73859 4.30914H19.75V5.59286H2.63961L6.06986 8.98864L5.17449 9.875L0.25 5L5.17449 0.125L6.06986 1.01136L2.73859 4.30914Z" fill="#88DD9B"/>
                     </svg>                        
                     see all products
                 </a>
@@ -45,13 +45,11 @@
             {% include "product_grid.html" %}
         </section>
 
-        <section class="content__row content__row--bleed product__back-to-store">
-            <a href="/store" class="link link--light link--borderless">
-                <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.73859 4.30914H19.75V5.59286H2.63961L6.06986 8.98864L5.17449 9.875L0.25 5L5.17449 0.125L6.06986 1.01136L2.73859 4.30914Z" fill="white"/>
-                </svg>                        
-                see all products
-            </a>
-        </section>
+        <a href="/store" class="content__row content__row--bleed product__back-to-store">
+            <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.73859 4.30914H19.75V5.59286H2.63961L6.06986 8.98864L5.17449 9.875L0.25 5L5.17449 0.125L6.06986 1.01136L2.73859 4.30914Z" fill="white"/>
+            </svg>                        
+            see all products
+        </a>
     </main>
 {% endblock %}

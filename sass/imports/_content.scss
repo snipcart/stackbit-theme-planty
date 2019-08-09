@@ -10,12 +10,14 @@
         &--overlap       { margin-top: -200px; }
         &--bleed         { padding: 0; max-width: none; }
         &:last-child     { margin-bottom: 0 }
-        overflow: hidden;
+        @include smaller-than-tablet {
+            overflow: hidden;
+        }
     }
 
     &__row-title {
         color: $color_medium;
-        margin-bottom: 50px;
+        margin-bottom: $spacing--unit*7;
         font-size: $font_size_large;
 
         &--light {
@@ -26,6 +28,11 @@
         &--dark {
             svg path { fill: $color_dark; }
             color: $color_dark;
+        }
+
+        &--medium {
+            svg path { fill: $color_medium; }
+            color: $color_medium;
         }
 
         svg { margin-right: 10px; }

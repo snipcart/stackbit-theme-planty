@@ -1,36 +1,62 @@
 .quotes {
   display: flex;
 
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-radius: 15px;
   padding: 60px;
-  @include smaller-than-tablet { padding: 25px; }
-
-  &__icon { margin-bottom: 35px; }
-  &__text { line-height: 175%; }
-
-  &__author {
-      margin-top: 35px;
-      font-weight: bold;
-      text-transform: uppercase;
+  @include smaller-than-tablet {
+    padding: 25px;
   }
 
-  &__location { font-weight: normal; }
+  &__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__icon {
+    margin-bottom: $spacing--unit*4;
+    width: fit-content;
+  }
+
+  &__text {
+    color: $color_dark;
+    line-height: 175%;
+    margin-bottom: $spacing--unit*4;
+  }
+
+  &__author {
+    font-family: $font_family_primairy;
+    color: $color_dark;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: auto;
+  }
+
+  &__location {
+    color: $color_medium;
+  }
 
   &__separator {
-      display: block;
-      margin-left: 75px;
-      margin-right: 75px;
-      width: 1px;
-      height: 100%;
-      background-color: #CCCC;
+    display: block;
+    margin-left: $spacing--unit*9;
+    margin-right: $spacing--unit*9;
+    width: 1px;
+    height: 230px;
+    background-color: #cccc;
+    &:last-child {
+      display: none;
+    }
   }
 
   @include smaller-than-tablet {
-      flex-direction: column;
-      &__separator {
-          margin-top: 25px;
-          margin-bottom: 25px;
-      }
+    flex-direction: column;
+    &__separator {
+      height: 1px;
+      width: 100%;
+      margin: 0;
+      margin-top: $spacing--unit*9;
+      margin-bottom: $spacing--unit*9;
+    }
   }
 }

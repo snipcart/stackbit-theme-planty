@@ -1,14 +1,19 @@
 .faq {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   &__section {
     max-width: 600px;
-    &:nth-child(-n+2) {
-      margin-top: 40px;
+    &:nth-child(-n + 2) {
+      margin-top: $spacing--unit*3;
+    }
+
+    &:last-child {
+      border: 1px solid red !important;
     }
   }
 
   &__question {
-    font-family: 'Open Sans', sans-serif;
+    line-height: $spacing--unit*4;
+    font-family: $font_family_primairy;
     font-weight: bold;
     font-size: $font_size_medium;
     margin-bottom: 30px;
@@ -19,18 +24,17 @@
     font-style: normal;
     font-weight: normal;
     font-size: $font_size_regular;
-    margin-bottom: 30px;
     line-height: 150%;
     color: $color_light_grey;
-    &:after { 
-      content:"";
+    &:after {
+      content: "";
       opacity: 0.2;
       margin-left: auto;
       margin-right: auto;
       margin-top: 50px;
       display: block;
-      background: $color_light_grey; 
-      height: 1px; 
+      background: $color_light_grey;
+      height: 1px;
       width: 100%;
     }
 
@@ -70,8 +74,8 @@
 
   &__contact-title {
     line-height: 56px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: $font_size_xlarge;
+    font-family: $font_family_primairy;
+    font-size: 46px;
     color: $color_dark_grey;
     margin-bottom: 50px;
     @include smaller-than-tablet {
@@ -108,13 +112,13 @@
     display: grid;
     grid-template-columns: 200px 1fr;
     grid-template-rows: repeat(1fr, 2);
-    grid-gap: 25px;
-    grid-column-gap: 100px;
     @include smaller-than-tablet {
       width: 100%;
       display: flex;
       flex-direction: column;
-      p { margin-bottom: 25px; }
+      p {
+        margin-bottom: 25px;
+      }
       a {
         width: 100%;
         display: flex;
@@ -137,11 +141,22 @@
 
   &__contact-email {
     grid-row: 1;
-    grid-column: 2;
+    grid-column: 3;
   }
 
   &__map-link {
     grid-row: 2;
+    grid-column: 3;
+    display: flex;
+  }
+
+  &__seperator {
+    grid-row: 1 / 3;
     grid-column: 2;
+    width: 1px;
+    background-color: $color_dark;
+    opacity: 0.5;
+    margin-right: $spacing--unit*8;
+    margin-left: $spacing--unit*8;
   }
 }

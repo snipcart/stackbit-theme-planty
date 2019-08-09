@@ -17,7 +17,7 @@
       background-image: $background_images_secondary_opt;
     }
     background-size: auto 250%;
-    background-position: center;
+    background-position: calc(50% + 400px) 50%;
     overflow-y: visible;
     margin-top: -110px;
   }
@@ -40,12 +40,13 @@
   }
   
   &__title {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font_family_primairy;
     font-weight: bold;
     font-size: $font_size_xxlarge;
     max-width: 600px;
     color: $color_dark_grey;
     margin-bottom: 50px;
+    overflow: visible;
     @include smaller-than-tablet {
       font-size: $font_size_large;
     }

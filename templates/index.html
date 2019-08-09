@@ -16,16 +16,17 @@
 
     <section class="content__row">
         {% set categories = getPages('/categories') | sort_array('name', 'asc') %}
+        {% set categoryIndex = 0 %}
         {% for category in categories %}
-            {% set products = getPages('/products') | where('category', category.slug) | sort_array('title', 'asc') %}
-
-            {% set count = products | length %}
-
-            {% if count > 0 %}
-                <h2 class="content__row-title">{{ category.title }}</h2>
-
-                {% set include_dict = {'products': products, 'cssClass': 'product-grid--draggable'} %}
-                {% include "product_grid.html" %}
+            {% set categoryIndex = categoryIndex + 1 %}
+            {% if categoryIndex < 3 %}
+                {% set products = getPages('/products') | where('category', category.slug) | sort_array('title', 'asc') %}
+                {% set count = products | length %}
+                {% if count > 0 %}
+                    <h2 class="content__row-title">{{ category.title }}</h2>
+                    {% set include_dict = {'products': products, 'cssClass': 'product-grid--draggable'} %}
+                    {% include "product_grid.html" %}
+                {% endif %}
             {% endif %}
         {% endfor %}
     </section>

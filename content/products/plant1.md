@@ -20,7 +20,7 @@ images:
             optimized: /images/plant1-featured-lg.webp
             fallback: /images/plant1-featured-lg.jpg
 featured: true
-category: summer
+category: bigplants
 section: Store
 ---
 

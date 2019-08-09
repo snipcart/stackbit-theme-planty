@@ -22,6 +22,9 @@ params:
       product:
         optimized: images/leaf.svg
         fallback: images/leaf.svg
+      cart:
+        optimized: images/cart-bg.webp
+        fallback: images/header.jpg
     colors:
       default: '#FFFFFF'
       light: '#F0F0F0'

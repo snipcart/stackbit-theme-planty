@@ -20,7 +20,7 @@ images:
             optimized: /images/plant8-featured-lg.webp
             fallback: /images/plant8-featured-lg.jpg
 featured: false
-category: europe
+category: summer
 section: Store
 ---
 

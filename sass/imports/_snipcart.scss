@@ -2,7 +2,55 @@
     border: none;
     border-top: solid 1px $color_light;
 }
-.snipcart {    
+
+.snipcart {
+    &-layout {
+        background-color: transparent;
+    }
+
+    &-layout__header {
+        min-height: 80px;
+        margin-top: $spacing--unit*2;
+        margin-bottom: $spacing--unit*2;
+
+        @include smaller-than-tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &-cart-button {
+        border-radius: $spacing--unit;
+    }
+
+    &-cart-header {
+        background-color: transparent;
+    }
+
+    &-cart-header__title {
+        img {
+            margin-left: auto;
+            margin-right: auto;
+            max-height: $spacing--unit*5;
+        }
+    }
+
+    &-modal__logo {
+        margin-left: auto;
+        margin-right: auto;
+        max-height: $spacing--unit*5;
+    }
+
+    &-modal__container {
+        background-repeat: no-repeat;
+        background-size: cover;
+        .no-webp & {
+            background-image: $background_images_cart;
+        }
+        .webp & {
+            background-image: $background_images_cart_opt;
+        }
+    }
+
     &-cart-button--highlight {
         background-image: none;
         background-color: $color_active;
@@ -32,19 +80,26 @@
         border-color: $color_active;
     }
 
+    &-discount-box {
+        background-color: transparent;
+        border-color: #6B797A;
+    }
+
     &-discount-box__form {
-        border-color: $color_active;
+        border-color: #6B797A;
     }
 
     &-discount-box__button {
-        &:focus {
-            border-color: $color_active;
-        }
+        border-color: #6B797A;
+    }
+
+    &-discount-box__submit {
+        color: $color_active;
     }
 
     &__box--badge-highlight {
         background-image: none;
-        background-color: $color_active;
+        background: linear-gradient(90deg, #384647 0%, #6B797A 100%);
     }
     
     &__order__invoice__number--highlight {
@@ -81,5 +136,9 @@
         &__header {
             background-color: rgba($color_light, 1);
         }
+    }
+
+    &-item-line__image {
+        border-radius: 8px;
     }
 }

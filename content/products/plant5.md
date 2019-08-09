@@ -20,7 +20,7 @@ images:
             optimized: /images/plant5-featured-lg.webp
             fallback: /images/plant5-featured-lg.jpg
 featured: true
-category: europe
+category: bigplants
 section: Store
 ---
 

@@ -20,7 +20,7 @@ images:
             optimized: /images/plant2-featured-lg.webp
             fallback: /images/plant2-featured-lg.jpg
 featured: true
-category: summer
+category: cactuses
 section: Store
 ---
 

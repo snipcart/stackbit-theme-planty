@@ -2,29 +2,46 @@
   display: flex;
   align-items: center;
   font-size: $font_size_medium;
-  border: 1px solid $color_active;
+  border: 2px solid $color_active;
   padding: 13px 22px;
-  border-radius: 5px; 
-  font-family: 'Open Sans', sans-serif;
+  border-radius: 5px;
+  font-family: $font_family_primairy;
   font-weight: bold;
-  color: $color_active; 
-  svg { margin-left: 10px; }
+  color: $color_active;
   width: fit-content;
   background-color: transparent;
+  svg {
+    margin-left: 10px;
+  }
 
+  &--reversed {
+    flex-direction: row-reverse;
+    svg {
+      margin-right: 10px;
+      margin-left: 0;
+    }
+  }
 
   &--filled {
     background-color: $color_active;
-    color: $color_default
+    color: $color_default;
   }
 
   &--light {
     color: $color_default;
-    border: 1px solid $color_default;
-    svg { path { fill: $color_default; } }
+    border: 2px solid $color_default;
+    svg {
+      path {
+        fill: $color_default;
+      }
+    }
   }
 
-  &--borderless { border: none; }
+  &--borderless {
+    border: none;
+  }
 
-  @include smaller-than-tablet { font-size: $font_size_regular; }
+  @include smaller-than-tablet {
+    font-size: $font_size_regular;
+  }
 }

@@ -2,7 +2,7 @@
 
 <section class="content__row content__row--bleed">
     <div class="promo">
-        {% set include_dict = {'image': promotion.image, 'alt': promotion.title, 'cssClass': 'promo__image'} %}
+        {% set include_dict = {'image': promotion.image, 'alt': promotion.title} %}
         {% include "picture.html" %}
 
         <div class="promo__message-container">

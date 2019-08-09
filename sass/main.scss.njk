@@ -21,6 +21,9 @@ $background_images_secondary_opt: url(../../{{ backgroundImages.secondary.optimi
 $background_images_product: url(../../{{ backgroundImages.product.fallback }});
 $background_images_product_opt: url(../../{{ backgroundImages.product.optimized }});
 
+$background_images_cart: url(../../{{ backgroundImages.cart.fallback }});
+$background_images_cart_opt: url(../../{{ backgroundImages.cart.optimized }});
+
 $font_size_small: 18px;
 $font_size_xxlarge: 64px;
 $font_size_xlarge: 48px;
@@ -28,6 +31,9 @@ $font_size_large: 32px;
 $font_size_medium: 24px;
 $font_size_regular: 20px;
 $font_size_small: 16px;
+
+$font_family_primairy: 'Open Sans', sans-serif;
+$font_family_secondary: 'Lato', sans-serif;
 
 * {
     box-sizing: border-box;
@@ -41,7 +47,7 @@ body {
 
 a {
     text-decoration: none;
-    color: $color_dark;
+    color: inherit;
 }
 
 figure {

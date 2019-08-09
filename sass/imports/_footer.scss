@@ -19,14 +19,23 @@
   }
 
   &__nav-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      &:not(:last-child) { margin-right: 40px; }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:not(:last-child) { 
+        margin-right: 40px;
+    }
   }
   
-  &__logo { height: 45px; margin-right: 65px; }
-  &__nav-link { color: $color_medium; font-weight: bold; }
+  &__logo { 
+    height: 45px; 
+    margin-right: 65px;
+  }
+
+  &__nav-link { 
+    color: $color_medium;
+    font-weight: bold;
+}
 
   &__legal-notice {
       display: flex;

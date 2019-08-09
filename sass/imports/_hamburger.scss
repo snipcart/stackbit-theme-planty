@@ -38,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font_family_primairy;
     font-weight: bold;
     font-size: $font_size_medium;
   }
@@ -60,7 +60,7 @@
  
   &__nav-link {
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font_family_primairy;
     font-size: $font_size_large;
   }
 }
