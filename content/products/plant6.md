@@ -1,5 +1,5 @@
 ---
-template: product
+layout: product
 id: '6'
 price: '100.00'
 title: Donec finibus

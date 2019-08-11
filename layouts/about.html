@@ -3,7 +3,7 @@
 <main class="content about">
   {% set include_dict = {'page': page} %}
   {% include "static_header.html" %}
-  {% for bulletpoint in page.bulletpoints %}
+  {% for bulletpoint in page.params.bulletpoints %}
     <section class="content__row about__section">
       {% set include_dict = {'image': bulletpoint.image, 'alt': bulletpoint.title, 'cssClass': 'about__section-image'} %}
       {% include "picture.html" %}
@@ -16,6 +16,7 @@
     </section>
   {% endfor %}
 
+  {% set include_dict = {'site': site} %}
   {% include "promo_section.html" %} 
 </main>
 {% endblock %}

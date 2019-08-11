@@ -1,28 +1,27 @@
-{% set colors = site.params.styles.colors %}
-{% set backgroundImages = site.params.styles.backgroundImages %}
+{% set palette = site.params.palettes[site.params.palette].sass %}
 
-$color_default: {{ colors.default }};
-$color_light: {{ colors.light }};
-$color_medium: {{ colors.medium }};
-$color_dark: {{ colors.dark }};
-$color_active: {{ colors.active }};
-$color_active_light: {{ colors.active_light }};
-$color_active_medium: {{ colors.active_medium }};
-$color_active_dark: {{ colors.active_dark }};
-$color_dark_grey: {{ colors.dark_grey }};
-$color_light_grey: {{ colors.light_grey }};
+$color_default: {{ palette.default }};
+$color_light: {{ palette.light }};
+$color_medium: {{ palette.medium }};
+$color_dark: {{ palette.dark }};
+$color_active: {{ palette.active }};
+$color_active_light: {{ palette.active_light }};
+$color_active_medium: {{ palette.active_medium }};
+$color_active_dark: {{ palette.active_dark }};
+$color_dark_grey: {{ palette.dark_grey }};
+$color_light_grey: {{ palette.light_grey }};
 
-$background_images_primary: url(../../{{ backgroundImages.primary.fallback }});
-$background_images_primary_opt: url(../../{{ backgroundImages.primary.optimized }});
+$background_images_primary: url({{ palette.bg_image_primary_fallback }});
+$background_images_primary_opt: url({{ palette.bg_image_primary_optimized }});
 
-$background_images_secondary: url(../../{{ backgroundImages.secondary.fallback }});
-$background_images_secondary_opt: url(../../{{ backgroundImages.secondary.optimized }});
+$background_images_secondary: url({{ palette.bg_image_secondary_fallback }});
+$background_images_secondary_opt: url({{ palette.bg_image_secondary_optimized }});
 
-$background_images_product: url(../../{{ backgroundImages.product.fallback }});
-$background_images_product_opt: url(../../{{ backgroundImages.product.optimized }});
+$background_images_product: url({{ palette.bg_image_product_fallback }});
+$background_images_product_opt: url({{ palette.bg_image_product_optimized }});
 
-$background_images_cart: url(../../{{ backgroundImages.cart.fallback }});
-$background_images_cart_opt: url(../../{{ backgroundImages.cart.optimized }});
+$background_images_cart: url({{ palette.bg_image_cart_fallback }});
+$background_images_cart_opt: url({{ palette.bg_image_cart_optimized }});
 
 $font_size_small: 18px;
 $font_size_xxlarge: 64px;

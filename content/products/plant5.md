@@ -1,5 +1,5 @@
 ---
-template: product
+layout: product
 id: '5'
 price: '220.00'
 title: Vestibulum eget

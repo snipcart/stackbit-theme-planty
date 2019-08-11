@@ -1,7 +1,7 @@
 ---
 title: Cactuses
 slug: cactuses
-template: category
+layout: category
 section: Store
 menus:
     categories:

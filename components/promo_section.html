@@ -1,5 +1,4 @@
-{% set promotion = site.data.promotion %}
-
+{% set promotion = include_dict.site.data.promotion %}
 <section class="content__row content__row--bleed">
     <div class="promo">
         {% set include_dict = {'image': promotion.image, 'alt': promotion.title} %}

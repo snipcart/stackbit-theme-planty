@@ -1,6 +1,6 @@
 ---
 title: Store
-template: store
+layout: store
 menus:
     main:
         weight: 1

@@ -7,11 +7,12 @@
 
     <div class="content__row store__container">
         <nav class="store__nav">
+            {% set include_dict = {'page': page, 'site': site} %}
             {% include "nav_categories.html" %}
         </nav>
         <section class="store__products">
-            {% set products = getPages('/products') | sort_array('name', 'asc') %}
-            {% set include_dict = {'products': products, 'cssClass': 'store__product-grid'} %}
+            {% set product_pages = getPages('/products') | sort_array('name', 'asc') %}
+            {% set include_dict = {'product_pages': product_pages, 'cssClass': 'store__product-grid'} %}
             {% include "product_grid.html" %}
         </section>
     </div>
@@ -23,11 +24,12 @@
             </svg>                    
             Best Sellers
         </h2>
-        {% set products = getPages('/products') | where('featured', true) %}
-        {% set include_dict = {'products': products } %}
+        {% set featured_product_pages = getPages('/products') | where('featured', true) %}
+        {% set include_dict = {'product_pages': featured_product_pages} %}
         {% include "featured_products.html" %}
     </section>
 
+    {% set include_dict = {'site': site} %}
     {% include "promo_section.html" %}
 </main>
 {% endblock %}

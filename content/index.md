@@ -1,5 +1,5 @@
 ---
-template: index
+layout: index
 title: Home
 isHome: true
 ---

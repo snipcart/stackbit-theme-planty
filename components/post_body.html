@@ -7,7 +7,7 @@
         <close-cart-action class="snipcart-cart-header__close-button snipcart-modal__close">
           <icon class="snipcart-modal__close-icon snipcart__icon--blue-light" name="back-arrow"></icon>
           <span class="snipcart-modal__close-title snipcart__font--std">
-            {{ "{{ $localize('actions.continue_shopping') }}" | safe }}
+            {% raw %}{{ $localize('actions.continue_shopping') }}{% endraw %}
           </span>
         </close-cart-action>
 
@@ -17,14 +17,14 @@
 
         <div class="snipcart-cart-header__count snipcart__font--secondary snipcart__font--bold">
           <icon name="cart" class="snipcart-cart-header__icon snipcart__icon--blue-dark"></icon>
-          {{ "{{ itemsCount }}" | safe }}
+          {% raw %}{{ itemsCount }}{% endraw %}
         </div>
       </header>
       <header class="snipcart-cart-header" v-else>
         <close-cart-action class="snipcart-modal__close">
           <icon class="snipcart-modal__close-icon snipcart__icon--blue-light" name="back-arrow"></icon>
           <span class="snipcart-modal__close-title snipcart__font--std">
-            {{ "{{ itemsCount }}" | safe }}
+            {% raw %}{{ itemsCount }}{% endraw %}
           </span>
         </close-cart-action>
       </header>
@@ -38,7 +38,7 @@
             <icon name="back-arrow" class="snipcart-modal__close-icon snipcart__icon--blue-light"
               alt="actions.close_cart"></icon>
             <span class="snipcart-modal__close-title snipcart__font--std">
-              {{ "{{ $localize('actions.continue_shopping') }}" | safe}}
+              {% raw %}{{ $localize('actions.continue_shopping') }}{% endraw %}
             </span>
           </close-cart-action>
 
@@ -50,7 +50,7 @@
               @click.prevent="showSummary">
               <icon name="cart" class="snipcart__icon--blue-dark"></icon>
               <span>
-                {{ "{{ total | money(cart.currency) }}" | safe}}
+                {% raw %}{{ total | money(cart.currency) }}{% endraw %}
               </span>
               <media name="mobile, tablet">
                 <icon :name="summaryIcon" class="snipcart__icon--blue-dark snipcart__icon--medium"></icon>

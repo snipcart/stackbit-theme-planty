@@ -1,5 +1,5 @@
 ---
-template: product
+layout: product
 id: '8'
 price: '50.00'
 title: Fusce sed

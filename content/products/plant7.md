@@ -1,5 +1,5 @@
 ---
-template: product
+layout: product
 id: '7'
 price: '18.90'
 title: Sed consectetur

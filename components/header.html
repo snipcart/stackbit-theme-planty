@@ -1,15 +1,12 @@
-{% set data = include_dict.page %}
-{% set isHome = true if data.basename == 'index.md' else false %}
+{% set page = include_dict.page %}
+{% set site = include_dict.site %}
+{% set isHome = page.params.isHome | default(false, true) %}
 
 <header class="header">
     <nav {{ classNames('nav', {'nav--light': isHome, 'nav--dark': isHome != true}) }}>
         <div class="nav__logo">
             <a href="/">
-                <!-- FIXME: Can you use || operators? Seems to cause issues with rendering... -->
-                {% if isHome == true %}
-                    {% set include_dict = {'image': site.params.logos.light, 'cssClass': 'footer_logo nav__logo-image', 'alt': 'Planty logo'} %}
-                    {% include "picture.html" %}
-                {% elseif data.template == "product" %}
+                {% if isHome == true or page.layout == "product" %}
                     {% set include_dict = {'image': site.params.logos.light, 'cssClass': 'footer_logo nav__logo-image', 'alt': 'Planty logo'} %}
                     {% include "picture.html" %}
                 {% else %}
@@ -20,7 +17,7 @@
         </div>
         <ul class="nav__menu">
             {% for item in site.menus.main %}
-                {% set section = data.section if data.section else data.title %}
+                {% set section = page.params.section | default(page.title, true) %}
                 {% set isActive = true if item.title == section else false %}
                 <li class="nav__menu-item">
                     <a href="{{ item.url | relative_url }}" {{ classNames('nav__menu-item-link', {'nav__menu-item-link--active': isActive}) }}>
@@ -64,7 +61,7 @@
                 </button>
                 <ul class="hamburger__nav">
                     {% for item in site.menus.main %}
-                        {% set section = data.section if data.section else data.title %}
+                        {% set section = page.params.section | default(page.title, true) %}
                         {% set isActive = true if item.title == section else false %}
                         <li class="hamburger__nav-item">
                             <a href="{{ item.url | relative_url }}" {{ classNames('hamburger__nav-link', {'hamburger__nav-link--active': isActive})}}>

@@ -3,7 +3,7 @@
 <main class="content faq">
   {% set include_dict = {'page': page} %}
   {% include "static_header.html" %}
-  {% for question in page.questions %}
+  {% for question in page.params.questions %}
     <section class="content__row faq__section">
       <div class="faq__section-content-container">
         <h2 class="faq__question">{{ question.question }}</h2>
