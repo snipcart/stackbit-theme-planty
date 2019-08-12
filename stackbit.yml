@@ -1,5 +1,4 @@
 stackbitVersion: ~0.2.0
-ssgName: unibit
 staticDir: static 
 uploadDir: images
 dataDir: data
