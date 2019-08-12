@@ -11,31 +11,28 @@ params:
   snipcart_api_key: 'YTlkMmJlNjQtYWIwMi00MDk0LTlkYmEtZTE0Y2IxMzM3NjM5NjM2OTc5MzgxOTUwNzM4Njc1'
   snipcart_js: https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.js
   snipcart_css: https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.css
-  styles:  
-    backgroundImages:
-      primary: 
-        optimized: images/header.webp
-        fallback: images/header.jpg
-      secondary:
-        optimized: images/leaf-light-grey.svg
-        fallback: images/leaf-light-grey.svg
-      product:
-        optimized: images/leaf.svg
-        fallback: images/leaf.svg
-      cart:
-        optimized: images/cart-bg.webp
-        fallback: images/header.jpg
-    colors:
-      default: '#FFFFFF'
-      light: '#F0F0F0'
-      medium: '#6B797A'
-      dark: '#384647'
-      active: '#88DD9B'
-      active_light: '#C0FDB6'
-      active_medium: '#5C9174'
-      active_dark: '#547567'
-      dark_grey: '#273132'
-      light_grey: '#6B797A'
+  palette: default
+  palettes:
+    default:
+      sass:
+        default: '#FFFFFF'
+        light: '#F0F0F0'
+        medium: '#6B797A'
+        dark: '#384647'
+        active: '#88DD9B'
+        active_light: '#C0FDB6'
+        active_medium: '#5C9174'
+        active_dark: '#547567'
+        dark_grey: '#273132'
+        light_grey: '#6B797A'
+        bg_image_primary_optimized: /images/header.webp
+        bg_image_primary_fallback: /images/header.jpg
+        bg_image_secondary_optimized: /images/leaf-light-grey.svg
+        bg_image_secondary_fallback: /images/leaf-light-grey.svg
+        bg_image_product_optimized: /images/leaf.svg
+        bg_image_product_fallback: /images/leaf.svg
+        bg_image_cart_optimized: /images/cart-bg.webp
+        bg_image_cart_fallback: /images/header.jpg
 sass:
   input_file: sass/main.scss.njk
   output_file: assets/css/main.css

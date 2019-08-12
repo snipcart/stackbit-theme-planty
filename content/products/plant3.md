@@ -1,5 +1,5 @@
 ---
-template: product
+layout: product
 id: '3'
 price: '150.00'
 title: Curabitur eu tempor

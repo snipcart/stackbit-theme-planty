@@ -1,5 +1,5 @@
 ---
-template: product
+layout: product
 id: '2'
 price: '99.00'
 title: Integer porta

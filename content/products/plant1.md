@@ -1,5 +1,5 @@
 ---
-template: product
+layout: product
 id: '1'
 price: '49.40' 
 title: Nulla suscipit

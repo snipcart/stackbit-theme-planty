@@ -1,7 +1,7 @@
 ---
 title: Big plants
 slug: bigplants
-template: category
+layout: category
 section: Store
 menus:
     categories:

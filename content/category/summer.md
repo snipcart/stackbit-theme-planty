@@ -1,7 +1,7 @@
 ---
 title: Summer plants
 slug: summer
-template: category
+layout: category
 section: Store
 menus:
     categories:

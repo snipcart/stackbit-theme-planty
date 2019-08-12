@@ -1,14 +1,14 @@
-{% set product = include_dict.product %}
+{% set product_page = include_dict.product_page %}
 {% set component = include_dict.component %}
 
 <button class="{{ component }}__item-buy button button--icon-only snipcart-add-item"
-    data-item-name="{{ product.title }}"
-    data-item-url="{{ product.url }}"
-    data-item-price="{{ product.price }}"
-    date-item-categories="{{ product.category }}"
-    data-item-image="{{ product.images.default.thumbnail.fallback }}"
-    data-item-description="{{ product.description }}"
-    data-item-id="{{ product.id}}">
+    data-item-name="{{ product_page.title }}"
+    data-item-url="{{ product_page.url }}"
+    data-item-price="{{ product_page.params.price }}"
+    date-item-categories="{{ product_page.params.category }}"
+    data-item-image="{{ product_page.params.images.default.thumbnail.fallback }}"
+    data-item-description="{{ product_page.params.description }}"
+    data-item-id="{{ product_page.params.id}}">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M23.2896 4.94327C22.7844 4.81588 22.2535 5.1214 22.1272 5.63093L20.0304 13.9616H7.8562L4.97602 2.16559C4.87538 1.73269 4.49648 1.42717 4.0416 1.42717H0.960093C0.429223 1.42717 0 1.86007 0 2.39549C0 2.93091 0.429223 3.36381 0.960093 3.36381H3.3095L7.19908 19.3624C7.29973 19.7953 7.67862 20.1009 8.13351 20.1009H19.2223C19.7531 20.1009 20.1824 19.668 20.1824 19.1325C20.1824 18.5971 19.7531 18.1642 19.2223 18.1642H8.86555L8.31003 15.8972H20.7378C21.1671 15.8972 21.546 15.5917 21.6723 15.1836L23.9714 6.11341C24.0977 5.60487 23.7947 5.07044 23.2895 4.94306L23.2896 4.94327Z" fill="#88DD9B"/>
         <path d="M11.4678 22.4455C11.4678 23.3034 10.7781 24 9.92751 24C9.07596 24 8.38623 23.3034 8.38623 22.4455C8.38623 21.5877 9.07596 20.891 9.92751 20.891C10.7781 20.891 11.4678 21.5877 11.4678 22.4455Z" fill="#88DD9B"/>

@@ -1,5 +1,5 @@
 ---
-template: product
+layout: product
 id: '4'
 price: '24.99'
 title: Cras molestie

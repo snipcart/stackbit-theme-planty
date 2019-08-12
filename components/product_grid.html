@@ -1,21 +1,20 @@
+{% set product_pages = include_dict.product_pages %}
 {% set listCssClass = include_dict.cssClass %}
-
 <ul class="product-grid {% if listCssClass %}{{ listCssClass }}{%endif%}">
-    {% set products = include_dict.products %}
-    {% for product in products %}
+    {% for product_page in product_pages %}
         <li class="product-grid__item">
-            <figure data-href="{{ product.url | relative_url }}" class="product-grid__item-figure js-figure-link">
-                {% set include_dict = {'image': product.images.default.thumbnail, 'alt': product.title, 'cssClass': 'product-grid__item-image'} %}
+            <figure data-href="{{ product_page.url | relative_url }}" class="product-grid__item-figure js-figure-link">
+                {% set include_dict = {'image': product_page.params.images.default.thumbnail, 'alt': product_page.title, 'cssClass': 'product-grid__item-image'} %}
                 {% include "picture.html" %}
                 <figcaption>
-                    {% set include_dict= {'product': product, 'component': 'product-grid'} %}
+                    {% set include_dict= {'product_page': product_page, 'component': 'product-grid'} %}
                     {% include "small_buy_button.html" %}
                 </figcaption>
             </figure>
             <div class="product-grid__definition">
-                <a href="{{ product.url | relative_url }}"><h3 class="product-grid__title">{{ product.title }}</h3></a>
-                <span class="product-grid__category"> {{ product.category }} </span>
-                <span class="product-grid__price"> ${{ product.price }} </span>
+                <a href="{{ product_page.url | relative_url }}"><h3 class="product-grid__title">{{ product_page.title }}</h3></a>
+                <span class="product-grid__category"> {{ product_page.params.category }} </span>
+                <span class="product-grid__price"> ${{ product_page.params.price }} </span>
             </div>
         </li>
     {% endfor %}

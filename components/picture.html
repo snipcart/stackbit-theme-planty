@@ -1,6 +1,8 @@
 {% set image = include_dict.image %}
+{% set alt = include_dict.alt %}
+{% set cssClass = include_dict.cssClass %}
 <picture>
   <source srcset="{{ image.optimized | relative_url }}" type="image/webp">
   <source srcset="{{ image.fallback | relative_url }}" type="image/jpeg"> 
-  <img src="{{ image.fallback | relative_url }}" {% if alt %}alt="{{ include_dict.alt }}"{% endif %}  {% if include_dict.cssClass %}class="{{ include_dict.cssClass }}"{% endif %}>
+  <img src="{{ image.fallback | relative_url }}" {% if alt %}alt="{{ alt }}"{% endif %}  {% if cssClass %}class="{{ cssClass }}"{% endif %}>
 </picture>

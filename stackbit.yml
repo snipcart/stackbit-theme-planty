@@ -1,5 +1,9 @@
-stackbitVersion: ~0.2.34
+stackbitVersion: ~0.2.0
+ssgName: unibit
+staticDir: static 
 uploadDir: images
+dataDir: data
+pagesDir: content
 metadata:
   title: Snipcart
   description: An e-commerce theme powered by Snipcart
@@ -46,92 +50,93 @@ models:
               - type: image
                 name: fallback
                 label: Fallback (JPG or PNG)
+      - type: enum
+        label: Color Palette
+        name: palette
+        options:
+         - default
       - type: object
-        label: Styles config
-        name: styles
+        name: palettes
+        label: Palettes
+        hidden: true
         fields:
-          - type: object
-            label: Background images
-            name: backgroundImages
-            fields:
-              - type: object
-                name: primary
-                label: Primary
-                fields:
-                  - type: image
-                    name: optimized
-                    label: Optimized (WEBP or similar)
-                  - type: image
-                    name: fallback
-                    label: Fallback (JPG or PNG)
-              - type: object
-                name: secondary
-                label: Secondary
-                fields:
-                  - type: image
-                    name: optimized
-                    label: Optimized (WEBP or similar)
-                  - type: image
-                    name: fallback
-                    label: Fallback (JPG or PNG)
-              - type: object
-                name: product
-                label: Product details background
-                fields:
-                  - type: image
-                    name: optimized
-                    label: Optimized (WEBP or similar)
-                  - type: image
-                    name: fallback
-                    label: Fallback (JPG or PNG)
-              - type: object
-                name: cart
-                label: Cart background
-                fields:
-                  - type: image
-                    name: optimized
-                    label: Optimized (WEBP or similar)
-                  - type: image
-                    name: fallback
-                    label: Fallback (JPG or PNG)
-          - type: object
-            name: colors
-            label: Colors
-            fields:
-              - type: string
-                label: Default light
-                name: default
-              - type: string
-                label: Light
-                name: light
-              - type: string
-                label: Medium
-                name: medium
-              - type: string
-                label: Dark
-                name: dark
-              - type: string
-                label: Active
-                name: active
-              - type: string
-                label: Active light
-                name: active_light
-              - type: string
-                label: Active medium
-                name: active_medium
-              - type: string
-                label: Active dark
-                name: active_dark
-              - type: string
-                label: Dark grey
-                name: dark_grey
-              - type: string
-                label: Light grey
-                name: light_grey
+          - type: palette
+            name: default
+            label: Default
+  palette:
+    type: object
+    label: Palette
+    fields:
+      - type: object
+        name: sass
+        label: SASS
+        fields:
+          - type: string
+            label: Default light
+            name: default
+          - type: string
+            label: Light
+            name: light
+          - type: string
+            label: Medium
+            name: medium
+          - type: string
+            label: Dark
+            name: dark
+          - type: string
+            label: Active
+            name: active
+          - type: string
+            label: Active light
+            name: active_light
+          - type: string
+            label: Active medium
+            name: active_medium
+          - type: string
+            label: Active dark
+            name: active_dark
+          - type: string
+            label: Dark grey
+            name: dark_grey
+          - type: string
+            label: Light grey
+            name: light_grey
+          - type: string
+            name: bg_image_primary_optimized
+            label: Primary Optimized Backround Image
+            description: Primary Optimized Backround Image (WEBP or similar)
+          - type: string
+            name: bg_image_primary_fallback
+            label: Primary Fallback Backround Image
+            description: Primary Fallback Backround Image (JPG or PNG)
+          - type: string
+            name: bg_image_secondary_optimized
+            label: Secondary Optimized Backround Image
+            description: Secondary Optimized Backround Image (WEBP or similar)
+          - type: string
+            name: bg_image_secondary_fallback
+            label: Secondary Fallback Backround Image
+            description: Secondary Fallback Backround Image (JPG or PNG)
+          - type: string
+            name: bg_image_product_optimized
+            label: Product Optimized Backround Image
+            description: Product Optimized Backround Image (WEBP or similar)
+          - type: string
+            name: bg_image_product_fallback
+            label: Product Fallback Backround Image
+            description: Product Fallback Backround Image (JPG or PNG)
+          - type: string
+            name: bg_image_cart_optimized
+            label: Cart Optimized Backround Image
+            description: Cart Optimized Backround Image (WEBP or similar)
+          - type: string
+            name: bg_image_cart_fallback
+            label: Cart Fallback Backround Image
+            description: Cart Fallback Backround Image (JPG or PNG)
   index:
     type: page
     label: Home
-    template: index
+    layout: index
     file: index.md
     singleInstance: true
     fields:
@@ -142,10 +147,15 @@ models:
         label: Is home page
         name: isHome
         hidden: true
+  page:
+    type: page
+    label: Page
+    layout: page
+    fields: []
   store:
     type: page
     label: Store
-    template: store
+    layout: store
     file: store.md
     singleInstance: true
     hideContent: true
@@ -156,7 +166,7 @@ models:
   faq:
       type: page
       label: FAQ
-      template: faq
+      layout: faq
       file: faq.md
       singleInstance: true
       fields:
@@ -186,7 +196,7 @@ models:
   about:
     type: page
     label: About
-    template: about
+    layout: about
     file: about.md
     singleInstance: true
     fields:
@@ -228,8 +238,8 @@ models:
     type: page
     label: Categories
     hideContent: true
-    template: category
-    folder: categories
+    layout: category
+    folder: category
     fields:
       - type: string
         name: slug
@@ -303,7 +313,7 @@ models:
   products:
     type: page
     label: Product
-    template: product
+    layout: product
     folder: products
     fields:
       - type: string
@@ -373,7 +383,7 @@ models:
       - type: enum
         name: category
         label: Category
-        # To keep up to date with categories created in content/categories
+        # To keep up to date with categories created in content/category
         options: [summer, europe, bigplants, cactuses]
       - type: boolean
         name: featured
@@ -382,5 +392,3 @@ models:
         name: section
         label: Section
         options: [Store, About, Home]
-pagesDir: content
-staticDir: static 
