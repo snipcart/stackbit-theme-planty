@@ -1,4 +1,7 @@
 stackbitVersion: ~0.2.0
+ssgName: unibit
+buildCommand: unibit build
+publishDir: output
 staticDir: static 
 uploadDir: images
 dataDir: data
