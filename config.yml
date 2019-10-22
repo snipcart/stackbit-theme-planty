@@ -8,9 +8,9 @@ params:
     light: 
       optimized: 'images/logo-white.svg'
       fallback: 'images/logo-white.svg'
-  snipcart_api_key: 'YTlkMmJlNjQtYWIwMi00MDk0LTlkYmEtZTE0Y2IxMzM3NjM5NjM2OTc5MzgxOTUwNzM4Njc1'
-  snipcart_js: https://cdn.snipcart.com/themes/v3.0.0-beta.4.1/default/snipcart.js
-  snipcart_css: https://cdn.snipcart.com/themes/v3.0.0-beta.4.1/default/snipcart.css
+  snipcart_api_key: ''
+  snipcart_js: https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js
+  snipcart_css: https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css
   palette: default
   palettes:
     default:
