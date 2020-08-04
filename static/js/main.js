@@ -110,8 +110,7 @@ fetch('/js/snipcart-templates.vue')
       const fragment = document.createElement('div');
       const templateParams = document.getElementById('template-params').dataset;
       const apiKey = templateParams.apiKey;
-      const logo = templateParams.logoImage;
-      let html = htmlTemplate.replace(/__SNIPCART_API_KEY__/g, apiKey).replace(/__LOGO_DARK__/g, logo);
+      let html = htmlTemplate.replace(/__SNIPCART_API_KEY__/g, apiKey);
       fragment.innerHTML = html;
       document.body.appendChild(fragment);
 
