@@ -7,10 +7,13 @@ uploadDir: images
 dataDir: data
 pagesDir: content
 metadata:
-  title: Snipcart
+  title: Planty
   description: An e-commerce theme powered by Snipcart
   author: Snipcart
   authorURL: 'https://snipcart.com'
+  images:
+    small: images/demo-256x192.png
+    large: images/demo-1024x768.png
 models:
   config:
     type: config
