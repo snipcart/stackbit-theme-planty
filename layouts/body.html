@@ -18,5 +18,7 @@
 
     {% set include_dict = {'page': page,'site': site} %}
     {% include "footer.html" %}
-    {% include "snipcart_templates.html" %}
+    <div style="display: none" id="template-params"
+         data-api-key="{{ site.params.snipcart_api_key }}"
+         data-logo-image="{{ site.params.logos.dark.optimized | relative_url }}"></div>
 {% endblock %}

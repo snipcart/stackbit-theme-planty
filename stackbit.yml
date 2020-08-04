@@ -6,6 +6,7 @@ staticDir: static
 uploadDir: images
 dataDir: data
 pagesDir: content
+init_js: js/main.js
 metadata:
   title: Snipcart
   description: An e-commerce theme powered by Snipcart
