@@ -2,16 +2,21 @@ stackbitVersion: ~0.3.0
 ssgName: unibit
 buildCommand: unibit build
 publishDir: output
-staticDir: static 
+staticDir: static
 uploadDir: images
 dataDir: data
 pagesDir: content
 init_js: js/main.js
 metadata:
-  title: Snipcart
+  title: Planty
   description: An e-commerce theme powered by Snipcart
   author: Snipcart
   authorURL: 'https://snipcart.com'
+  palettes:
+    default:
+      images:
+        small: images/demo-256x192.png
+        large: images/demo-1024x768.png
 models:
   config:
     type: config
@@ -51,7 +56,7 @@ models:
         label: Color Palette
         name: palette
         options:
-         - default
+          - default
       - type: object
         name: palettes
         label: Palettes
@@ -331,26 +336,26 @@ models:
             label: Default
             name: default
             fields:
-                - type: object
-                  name: thumbnail
-                  label: Thumbnail
-                  fields:
-                    - type: image
-                      name: optimized
-                      label: Optimized (WEBP or similar)
-                    - type: image
-                      name: fallback
-                      label: Fallback (JPG or PNG)
-                - type: object  
-                  name: original
-                  label: Original
-                  fields:
-                    - type: image
-                      name: optimized
-                      label: Optimized (WEBP or similar)
-                    - type: image
-                      name: fallback
-                      label: Fallback (JPG or PNG)
+              - type: object
+                name: thumbnail
+                label: Thumbnail
+                fields:
+                  - type: image
+                    name: optimized
+                    label: Optimized (WEBP or similar)
+                  - type: image
+                    name: fallback
+                    label: Fallback (JPG or PNG)
+              - type: object
+                name: original
+                label: Original
+                fields:
+                  - type: image
+                    name: optimized
+                    label: Optimized (WEBP or similar)
+                  - type: image
+                    name: fallback
+                    label: Fallback (JPG or PNG)
           - type: object
             label: Featured
             name: featured
@@ -365,7 +370,7 @@ models:
                   - type: image
                     name: fallback
                     label: Fallback (JPG or PNG)
-              - type: object  
+              - type: object
                 name: original
                 label: Original
                 fields:
