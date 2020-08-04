@@ -1,11 +1,12 @@
-stackbitVersion: ~0.2.0
+stackbitVersion: ~0.3.0
 ssgName: unibit
 buildCommand: unibit build
 publishDir: output
-staticDir: static 
+staticDir: static
 uploadDir: images
 dataDir: data
 pagesDir: content
+init_js: js/main.js
 metadata:
   title: Planty
   description: An e-commerce theme powered by Snipcart
@@ -24,12 +25,6 @@ models:
       - type: string
         label: Title
         name: title
-      - type: string
-        label: Snipcart JavaScript file URL
-        name: snipcart_js
-      - type: string
-        label: Snipcart CSS file URL
-        name: snipcart_css
       - type: string
         label: Snipcart public API key
         name: snipcart_api_key
@@ -61,13 +56,14 @@ models:
         label: Color Palette
         name: palette
         options:
-         - default
+          - default
       - type: object
         name: palettes
         label: Palettes
         hidden: true
         fields:
-          - type: palette
+          - type: model
+            models: [palette]
             name: default
             label: Default
   palette:
@@ -171,35 +167,35 @@ models:
         label: Title
         name: title
   faq:
-      type: page
-      label: FAQ
-      layout: faq
-      file: faq.md
-      singleInstance: true
-      fields:
-        - type: string
-          name: title
-          label: Title
-        - type: string
-          name: headline
-          label: Headline
-        - type: markdown
-          name: introduction
-          label: Introduction
-        - type: list
-          name: questions
-          label: Questions
-          description: List of questions to show on the FAQ page
-          items:
-            type: object
-            labelField: question
-            fields:
-              - type: string
-                name: question
-                label: Question
-              - type: markdown
-                name: answer
-                label: Answer
+    type: page
+    label: FAQ
+    layout: faq
+    file: faq.md
+    singleInstance: true
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: headline
+        label: Headline
+      - type: markdown
+        name: introduction
+        label: Introduction
+      - type: list
+        name: questions
+        label: Questions
+        description: List of questions to show on the FAQ page
+        items:
+          type: object
+          labelField: question
+          fields:
+            - type: string
+              name: question
+              label: Question
+            - type: markdown
+              name: answer
+              label: Answer
   about:
     type: page
     label: About
@@ -240,7 +236,6 @@ models:
                 - type: image
                   name: fallback
                   label: Fallback (JPG or PNG)
-        
   categories:
     type: page
     label: Categories
@@ -258,7 +253,6 @@ models:
         name: section
         label: Section
         options: [Store, About, Home]
-
   promotion:
     type: data
     file: promotion.json
@@ -316,7 +310,6 @@ models:
                 - type: string
                   name: location
                   label: Location
-
   products:
     type: page
     label: Product
@@ -343,26 +336,26 @@ models:
             label: Default
             name: default
             fields:
-                - type: object
-                  name: thumbnail
-                  label: Thumbnail
-                  fields:
-                    - type: image
-                      name: optimized
-                      label: Optimized (WEBP or similar)
-                    - type: image
-                      name: fallback
-                      label: Fallback (JPG or PNG)
-                - type: object  
-                  name: original
-                  label: Original
-                  fields:
-                    - type: image
-                      name: optimized
-                      label: Optimized (WEBP or similar)
-                    - type: image
-                      name: fallback
-                      label: Fallback (JPG or PNG)
+              - type: object
+                name: thumbnail
+                label: Thumbnail
+                fields:
+                  - type: image
+                    name: optimized
+                    label: Optimized (WEBP or similar)
+                  - type: image
+                    name: fallback
+                    label: Fallback (JPG or PNG)
+              - type: object
+                name: original
+                label: Original
+                fields:
+                  - type: image
+                    name: optimized
+                    label: Optimized (WEBP or similar)
+                  - type: image
+                    name: fallback
+                    label: Fallback (JPG or PNG)
           - type: object
             label: Featured
             name: featured
@@ -377,7 +370,7 @@ models:
                   - type: image
                     name: fallback
                     label: Fallback (JPG or PNG)
-              - type: object  
+              - type: object
                 name: original
                 label: Original
                 fields:
