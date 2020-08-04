@@ -12,7 +12,7 @@ metadata:
   author: Snipcart
   authorURL: 'https://snipcart.com'
   palettes:
-    blue:
+    default:
       images:
         small: images/demo-256x192.png
         large: images/demo-1024x768.png
