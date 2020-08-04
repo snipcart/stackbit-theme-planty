@@ -9,8 +9,6 @@ params:
       optimized: 'images/logo-white.svg'
       fallback: 'images/logo-white.svg'
   snipcart_api_key: ''
-  snipcart_js: https://cdn.snipcart.com/themes/v3.0.4/default/snipcart.js
-  snipcart_css: https://cdn.snipcart.com/themes/v3.0.4/default/snipcart.css
   palette: default
   palettes:
     default:
