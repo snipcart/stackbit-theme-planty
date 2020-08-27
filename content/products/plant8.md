@@ -2,6 +2,7 @@
 layout: product
 id: '8'
 price: '50.00'
+order: 8
 title: Fusce sed
 description: In cursus sagittis eros non congue.
 images:
@@ -19,7 +20,6 @@ images:
         original:
             optimized: /images/plant8-featured-lg.webp
             fallback: /images/plant8-featured-lg.jpg
-featured: false
 category: summer
 section: Store
 ---

@@ -2,6 +2,7 @@
 layout: product
 id: '6'
 price: '100.00'
+order: 6
 title: Donec finibus
 description: Cras molestie faucibus ipsum ut vulputate.
 images:
@@ -19,7 +20,6 @@ images:
         original:
             optimized: /images/plant6-featured-lg.webp
             fallback: /images/plant6-featured-lg.jpg
-featured: false
 category: bigplants
 section: Store
 ---

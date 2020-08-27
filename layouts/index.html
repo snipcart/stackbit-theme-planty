@@ -8,19 +8,19 @@
             </svg>
             Best sellers
         </h2>
-
-        {% set featured_product_pages = getPages('/products') | where('featured', true) %}
-        {% set include_dict = {'product_pages': featured_product_pages} %}
+        {% set store = getPage('/store') %}
+        {% set featured_products = store.featured_products %}
+        {% set include_dict = {'featured_products': featured_products, 'listCssClass': 'product-grid--draggable'} %}
         {% include "featured_products.html" %}
     </section>
 
     <section class="content__row">
-        {% set category_pages = getPages('/category') | sort_array('name', 'asc') %}
+        {% set category_pages = getPages('/category') | sort_array('order', 'asc') %}
         {% set categoryIndex = 0 %}
         {% for category_page in category_pages %}
             {% set categoryIndex = categoryIndex + 1 %}
             {% if categoryIndex < 3 %}
-                {% set category_product_pages = getPages('/products') | where('category', category_page.params.slug) | sort_array('title', 'asc') %}
+                {% set category_product_pages = getPages('/products') | where('category', category_page.params.slug) | sort_array('order', 'asc') %}
                 {% set count = category_product_pages | length %}
                 {% if count > 0 %}
                     <h2 class="content__row-title">{{ category_page.title }}</h2>
