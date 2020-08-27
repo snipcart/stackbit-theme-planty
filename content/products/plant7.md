@@ -2,6 +2,7 @@
 layout: product
 id: '7'
 price: '18.90'
+order: 7
 title: Sed consectetur
 description: Fusce sed tortor id diam rhoncus accumsan.
 images:
@@ -19,7 +20,6 @@ images:
         original:
             optimized: /images/plant7-featured-lg.webp
             fallback: /images/plant7-featured-lg.jpg
-featured: false
 category: bigplants
 section: Store
 ---

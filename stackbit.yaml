@@ -7,6 +7,8 @@ uploadDir: images
 dataDir: data
 pagesDir: content
 init_js: js/main.js
+logicFields:
+  - weight
 metadata:
   title: Planty
   description: An e-commerce theme powered by Snipcart
@@ -166,6 +168,14 @@ models:
       - type: string
         label: Title
         name: title
+      - type: list
+        label: Featured Products
+        name: featured_products
+        description: List of products to feature in the homepage
+        items:
+          type: reference
+          labelField: title
+          models: [product]
   faq:
     type: page
     label: FAQ
@@ -236,9 +246,9 @@ models:
                 - type: image
                   name: fallback
                   label: Fallback (JPG or PNG)
-  categories:
+  category:
     type: page
-    label: Categories
+    label: Category
     hideContent: true
     layout: category
     folder: category
@@ -249,6 +259,10 @@ models:
       - type: string
         name: title
         label: Title
+      - type: number
+        name: order
+        label: Order
+        description: Numerical order of sorting categories
       - type: enum
         name: section
         label: Section
@@ -310,7 +324,7 @@ models:
                 - type: string
                   name: location
                   label: Location
-  products:
+  product:
     type: page
     label: Product
     layout: product
@@ -328,6 +342,10 @@ models:
       - type: string
         name: price
         label: Price
+      - type: number
+        name: order
+        label: Order
+        description: numerical order of sorting products
       - type: object
         name: images
         label: Images
@@ -385,9 +403,6 @@ models:
         label: Category
         # To keep up to date with categories created in content/category
         options: [summer, europe, bigplants, cactuses]
-      - type: boolean
-        name: featured
-        label: Featured
       - type: enum
         name: section
         label: Section

@@ -40,7 +40,7 @@
 
         <section class="content__row">
             <h2 class="content__row-title">Related</h2>
-            {% set product_pages = getPages('/products') | where('category', category_page.params.slug) | sort_array('title', 'asc') | where('id', '!=', page.params.id) %}
+            {% set product_pages = getPages('/products') | where('category', category_page.params.slug) | sort_array('order', 'asc') | where('id', '!=', page.params.id) %}
             {% set include_dict = {'product_pages': product_pages, 'cssClass': 'product-grid--draggable'} %}
             {% include "product_grid.html" %}
         </section>

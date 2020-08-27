@@ -12,7 +12,7 @@
             </nav>
             
             <section class="store__products">
-                {% set category_product_pages = getPages('/products') | where('category', page.params.slug) | sort_array('name', 'asc') %}
+                {% set category_product_pages = getPages('/products') | where('category', page.params.slug) | sort_array('order', 'asc') %}
                 {% set include_dict = {'product_pages': category_product_pages, 'cssClass': 'store__product-grid'} %}
                 {% include "product_grid.html" %}
             </section>
@@ -26,7 +26,7 @@
                 Best Sellers
             </h2>
             {% set featured_product_pages = getPages('/products') | where('featured', true) %}
-            {% set include_dict = {'product_pages': featured_product_pages} %}
+            {% set include_dict = {'featured_products': featured_product_pages, 'listCssClass': 'product-grid--draggable'} %}
             {% include "featured_products.html" %}
         </section>
     
