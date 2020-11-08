@@ -43,12 +43,7 @@
     &-modal__container {
         background-repeat: no-repeat;
         background-size: cover;
-        .no-webp & {
-            background-image: $background_images_cart;
-        }
-        .webp & {
-            background-image: $background_images_cart_opt;
-        }
+        background-image: $background_images_cart;
     }
 
     &-cart-button--highlight {

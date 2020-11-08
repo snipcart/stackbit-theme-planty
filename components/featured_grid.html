@@ -1,0 +1,10 @@
+{% set site = include_dict.site %}
+{% set products = include_dict.products %}
+{% set listCssClass = include_dict.cssClass %}
+<ul class="product-grid {% if listCssClass %}{{ listCssClass }}{%endif%}">
+    {% for product in products %}
+        {% set product_page = getPageByFilePath(product) %}
+            {% set include_dict = { 'product_page': product_page, 'site': site } %}
+            {% include "product_grid_item.html" %}
+    {% endfor %}
+</ul>

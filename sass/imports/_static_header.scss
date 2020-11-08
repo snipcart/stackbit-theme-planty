@@ -1,7 +1,8 @@
-.static-header {
+.header-section {
   background-color: $color_light;
 
   &__header {
+    max-width: none;
     padding-top: 250px;
     padding-bottom: 150px;
     text-align: center;
@@ -10,16 +11,11 @@
     justify-content: center;
     align-items: center;
     background-color: $color_default;
-    .no-webp & {
-      background-image: $background_images_secondary;
-    }
-    .webp & {
-      background-image: $background_images_secondary_opt;
-    }
     background-size: auto 250%;
     background-position: calc(50% + 400px) 50%;
     overflow-y: visible;
     margin-top: -110px;
+    margin-bottom: -100px;
   }
 
   &__content {
@@ -27,18 +23,20 @@
     color: $color_light_grey;
     line-height: 150%;
     padding-bottom: 50px;
+
+    &:last-child     { margin-bottom: 0 }
     &:after {
       content:"";
       margin-left: auto;
       margin-right: auto;
       margin-top: 50px;
       display: block;
-      background: $color_active; 
-      height: 3px; 
+      background: $color_active;
+      height: 3px;
       width: 60px;
     }
   }
-  
+
   &__title {
     font-family: $font_family_primairy;
     font-weight: bold;

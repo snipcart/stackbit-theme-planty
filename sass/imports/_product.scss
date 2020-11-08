@@ -19,12 +19,6 @@
     &__background-left { 
         grid-column: 1 / 3;
         grid-row: 1 / 4;
-        .no-webp & {
-            background-image: $background_images_primary;
-        }
-        .webp & {
-            background-image: $background_images_primary_opt;
-        }
         background-size: cover;
         @include smaller-than-tablet { 
             grid-column: 1 / 8;
@@ -37,12 +31,6 @@
         grid-column: 3 / 8; 
         grid-row: 1 / 4;
         background-color: $color_default;
-        .no-webp & {
-            background-image: $background_images_secondary;
-        }
-        .webp & {
-            background-image: $background_images_secondary_opt;
-        }
         background-size: auto 250%;
         background-position: calc(50% + 200px) 50%;
         background-position-y: -650px;
@@ -159,12 +147,6 @@
         background-color: $color_active;
         font-size: $spacing--unit*2;  
         color: white;      
-        .no-webp & {
-            background-image: $background_images_product;
-        }
-        .webp & {
-            background-image: $background_images_product_opt;
-        }
         background-size: auto 700%;
         background-position: center;
 

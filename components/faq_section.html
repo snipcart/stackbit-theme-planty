@@ -1,0 +1,14 @@
+{% set section = include_dict.section %}
+
+<section class="content__row faq__section" data-id="{{section.section_id}}">
+{% for question in section.questions %}
+  <section class="content__row faq__section">
+    <div class="faq__section-content-container">
+      <h2 class="faq__question">{{ question.question }}</h2>
+      <div class="faq__answer">
+        {{ question.answer | markdownify }}
+      </div>
+    </div>
+  </section>
+{% endfor %}
+</section>

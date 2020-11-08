@@ -1,38 +1,17 @@
 {% extends "body.html" %}
 {% block content %}
-<main class="content store">
-        <div class="content__row content__row--direction-row store__head">
-            <h1 class="store__title">{{ page.title }}</h1>
-        </div>
-    
-        <div class="content__row store__container">
-            <nav class="store__nav">
-                {% set include_dict = {'page': page, 'site': site} %}
-                {% include "nav_categories.html" %}
-            </nav>
-            
-            <section class="store__products">
-                {% set category_product_pages = getPages('/products') | where('category', page.params.slug) | sort_array('name', 'asc') %}
-                {% set include_dict = {'product_pages': category_product_pages, 'cssClass': 'store__product-grid'} %}
-                {% include "product_grid.html" %}
-            </section>
-        </div>
-    
-        <section class="content__row">
-            <h2 class="content__row-title content__row-title--medium">
-                <svg width="29" height="25" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M28.152 3.4188C27.2129 1.75821 21.3251 -3.80243 14.4999 4.24829C7.33226 -3.80243 1.78532 1.75821 0.847792 3.4188C-0.859337 6.48936 0.164613 11.138 2.55492 13.3791L14.5015 25L26.4482 13.3791C28.8352 11.138 29.8592 6.49096 28.1521 3.4188H28.152Z" fill="#FDFDFD"/>
-                </svg>                    
-                Best Sellers
-            </h2>
-            {% set featured_product_pages = getPages('/products') | where('featured', true) %}
-            {% set include_dict = {'product_pages': featured_product_pages} %}
-            {% include "featured_products.html" %}
-        </section>
-    
-        {% set include_dict = {'site': site} %}
-        {% include "promo_section.html" %}
-    </main>
-
-
+{% set store_page = getPage('/store') %}
+<main class="content{% if store_page.params.page_css_class %} {{store_page.params.page_css_class}}{%endif%}">
+    {% for section in store_page.params.sections %}
+        {% if section.type === 'store_section' %}
+            {% set include_dict = {'section': section, 'page': page, 'category_url': page.url, 'site': site} %}
+            {% set component = section.type | component_file %}
+            {% include component %}
+        {% else %}
+            {% set include_dict = {'section': section, 'page': page, 'site': site} %}
+            {% set component = section.type | component_file %}
+            {% include component %}
+        {% endif %}
+    {% endfor %}
+</main>
 {% endblock %}

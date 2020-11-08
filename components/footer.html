@@ -1,10 +1,10 @@
 {% set page = include_dict.page %}
 {% set site = include_dict.site %}
-{% set menu = site.menus.main %}
+{% set menu = site.params.main_menu %}
 <footer class="footer">
     <div class="footer__container">
-        <a href="/">
-            {% set include_dict = {'image': site.params.logos.light, 'cssClass': 'footer__logo', 'alt': 'Planty logo'} %}
+        <a href="{{ '/' | relative_url }}">
+            {% set include_dict = {'image': site.params.logo_light, 'cssClass': 'footer__logo', 'alt': 'Planty logo'} %}
             {% include "picture.html" %}
         </a>
         <ul class="footer__nav">
@@ -16,6 +16,6 @@
             </li>
             {% endfor %}
         </ul>
-        <div class="footer__legal-notice"> Copyright 2019 Planty Inc. All rights reserved.</div>
+        <div class="footer__legal-notice">{{site.params.footer_text}}</div>
     </div>
 </footer>

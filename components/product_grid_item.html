@@ -1,0 +1,22 @@
+{% set product_page = include_dict.product_page %}
+
+<li class="product-grid__item">
+    <a href="{{ product_page.url | relative_url }}">
+        <figure class="product-grid__item-figure js-figure-link">
+            {% set include_dict = {'image': product_page.params.default_thumbnail_image, 'alt': product_page.title, 'cssClass': 'product-grid__item-image'} %}
+            {% include "picture.html" %}
+            <figcaption>
+                {% set include_dict = {'product_page': product_page, 'component': 'product-grid'} %}
+                {% include "small_buy_button.html" %}
+            </figcaption>
+        </figure>
+    </a>
+    <div class="product-grid__definition">
+        <a href="{{ product_page.url | relative_url }}"><h3 class="product-grid__title">{{ product_page.title }}</h3></a>
+        {% if product_page.params.category %}
+            {% set category_page = getPageByFilePath(product_page.params.category) %}
+            <span class="product-grid__category"> {{ category_page.title }} </span>
+        {% endif %}
+        <span class="product-grid__price"> ${{ product_page.params.price }} </span>
+    </div>
+</li>
