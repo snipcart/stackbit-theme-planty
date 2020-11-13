@@ -58,7 +58,7 @@
 
   &__contact-image {
     width: 0;
-    flex: 0.2;
+    flex: 1;
     object-fit: cover;
     @include smaller-than-tablet {
       max-height: 300px;
