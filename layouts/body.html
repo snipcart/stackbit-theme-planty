@@ -1,21 +1,13 @@
 {% extends "base.html" %}
-{% block body %} 
-    {% if page.basename == "index.md" %}
-        <div class="header-wrapper">
-            <div class="header-wrapper__overlay">
-                {% set include_dict = {'page': page} %}
-                {% include "hero.html" %}
-                {% set include_dict = {'page': page, 'site': site} %}
-                {% include "header.html" %}
-            </div>
-        </div>
-    {% else %}
+{% block body %}
+    <div class="site-wrapper">
         {% set include_dict = {'page': page, 'site': site} %}
         {% include "header.html" %}
-    {% endif %}
 
-    {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
 
-    {% set include_dict = {'page': page,'site': site} %}
-    {% include "footer.html" %}
+        {% set include_dict = {'page': page,'site': site} %}
+        {% include "footer.html" %}
+    </div>
+    <div style="display: none" id="template-params" data-api-key="{{ site.params.snipcart_api_key }}" data-templates-url="{{ 'js/snipcart-templates.vue' | relative_url }}"></div>
 {% endblock %}

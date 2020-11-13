@@ -4,9 +4,12 @@
     data-item-name="{{ product_page.title }}"
     data-item-url="{{ product_page.url }}"
     data-item-price="{{ product_page.params.price }}"
-    data-item-image="{{ product_page.params.images.default.thumbnail.fallback }}"
+    {% if product_page.params.default_thumbnail_image %} data-item-image="{{ product_page.params.default_thumbnail_image | relative_url }}" {% endif %}
     data-item-description="{{ product_page.params.description }}"
-    date-item-categories="{{ product_page.params.category }}"
+    {% if product_page.params.category %}
+        {% set category_page = getPageByFilePath(product_page.params.category) %}
+        data-item-categories="{{ category_page.title }}"
+    {% endif %}
     data-item-id="{{ product_page.params.id}}">
     <span class="button__icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -9,7 +9,7 @@
     object-fit: cover;
     background-color: $color_dark;
     img {
-        width: 100%;
+      width: 100%;
     }
   }
 
@@ -25,12 +25,6 @@
     background-color: $color_active;
     background-size: auto 400%;
     background-position: center;
-    .no-webp & {
-        background-image: $background_images_product;
-    }
-    .webp & {
-        background-image: $background_images_product_opt;
-    }
   }
 
   &__title {

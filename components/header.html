@@ -1,22 +1,22 @@
 {% set page = include_dict.page %}
 {% set site = include_dict.site %}
-{% set isHome = page.params.isHome | default(false, true) %}
+{% set white_header = page.params.white_header | default(false, true) %}
 
 <header class="header">
-    <nav {{ classNames('nav', {'nav--light': isHome, 'nav--dark': isHome != true}) }}>
-        <div class="nav__logo">
-            <a href="/">
-                {% if isHome == true or page.layout == "product" %}
-                    {% set include_dict = {'image': site.params.logos.light, 'cssClass': 'footer_logo nav__logo-image', 'alt': 'Planty logo'} %}
+    <nav {{ classNames('nav', {'nav--light': white_header, 'nav--dark': white_header != true}) }}>
+        <div class="nav__logo" data-dark="{{site.params.logo_dark}}">
+            <a href="{{ '/' | relative_url }}">
+                {% if white_header or page.layout == "product" %}
+                    {% set include_dict = {'image': site.params.logo_light, 'cssClass': 'nav__logo-image', 'alt': 'Site logo'} %}
                     {% include "picture.html" %}
                 {% else %}
-                    {% set include_dict = {'image': site.params.logos.dark, 'cssClass': 'footer_logo nav__logo-image', 'alt': 'Planty logo'} %}
+                    {% set include_dict = {'image': site.params.logo_dark, 'cssClass': 'nav__logo-image', 'alt': 'Site logo'} %}
                     {% include "picture.html" %}
                 {% endif %}
             </a>
         </div>
         <ul class="nav__menu">
-            {% for item in site.menus.main %}
+            {% for item in site.params.main_menu %}
                 {% set section = page.params.section | default(page.title, true) %}
                 {% set isActive = true if item.title == section else false %}
                 <li class="nav__menu-item">
@@ -41,7 +41,7 @@
                     <path class="hamburger__icon-path" fill-rule="evenodd" clip-rule="evenodd" d="M0 1.00049C0 0.448204 0.447715 0.000488281 1 0.000488281H23C23.5523 0.000488281 24 0.448204 24 1.00049C24 1.55277 23.5523 2.00049 23 2.00049H1C0.447716 2.00049 0 1.55277 0 1.00049ZM0 8.00049C0 7.4482 0.447715 7.00049 1 7.00049H13C13.5523 7.00049 14 7.4482 14 8.00049C14 8.55277 13.5523 9.00049 13 9.00049H1C0.447716 9.00049 0 8.55277 0 8.00049ZM1 14.0005C0.447715 14.0005 0 14.4482 0 15.0005C0 15.5528 0.447715 16.0005 1 16.0005H16C16.5523 16.0005 17 15.5528 17 15.0005C17 14.4482 16.5523 14.0005 16 14.0005H1Z" fill="white"/>
                 </svg>                            
             </button>
-            <div class="hamburger__content hamburger__content--closed">
+            <div class="hamburger__content hamburger__content--closed" style="background-image: url({{site.params.hamburger_background_image | relative_url}})">
                 <div class="hamburger__options">
                     <button class="snipcart-checkout button button--transparent">
                     <span class="button__icon nav__button-icon">
@@ -60,7 +60,7 @@
                     </svg>                            
                 </button>
                 <ul class="hamburger__nav">
-                    {% for item in site.menus.main %}
+                    {% for item in site.params.main_menu %}
                         {% set section = page.params.section | default(page.title, true) %}
                         {% set isActive = true if item.title == section else false %}
                         <li class="hamburger__nav-item">

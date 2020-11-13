@@ -1,0 +1,12 @@
+{% set section = include_dict.section %}
+
+<section class="content__row" data-id="{{section.section_id}}">
+    {% set categories = section.featured_categories %}
+    {% for category in categories %}
+        {% set category_page = getPageByFilePath(category) %}
+        <h2 class="content__row-title">{{ category_page.title }}</h2>
+        {% set product_pages = getPages('/products') | sort_array('order', 'asc') %}
+        {% set include_dict = {'product_pages': product_pages, 'category_url': category_page.url, 'site': site} %}
+        {% include "product_grid.html" %}
+    {% endfor %}
+</section>

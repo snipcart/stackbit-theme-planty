@@ -1,13 +1,8 @@
 .faq {
-  background-color: #f9f9f9;
   &__section {
     max-width: 600px;
     &:nth-child(-n + 2) {
       margin-top: $spacing--unit*3;
-    }
-
-    &:last-child {
-      border: 1px solid red !important;
     }
   }
 
@@ -89,6 +84,7 @@
     padding: 100px;
     width: 0;
     flex: 0.8;
+    flex-grow: 1;
     background-color: $color_default;
     margin-bottom: 50px;
 

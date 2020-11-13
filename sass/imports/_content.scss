@@ -1,15 +1,13 @@
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include container-properties;
+    padding-top: 101px;
 
     &__row {
         @include container-item-properties;
         margin-bottom: 50px;
         &--direction-row { display: flex; flex-direction: row; }
-        &--overlap       { margin-top: -200px; }
-        &--bleed         { padding: 0; max-width: none; }
-        &:last-child     { margin-bottom: 0 }
+        &--full-width         { max-width: none; padding: 0; }
+        &--mb-0         { margin-bottom: 0; }
         @include smaller-than-tablet {
             overflow: hidden;
         }
@@ -35,6 +33,9 @@
             color: $color_medium;
         }
 
-        svg { margin-right: 10px; }
+        svg {
+            margin-right: 10px;
+            fill: currentColor;
+        }
     }
 }

@@ -1,17 +1,37 @@
 .hero {
-    @include container-item-properties;
+    width: 100%;
+    margin-top: -101px;
+    padding-top: 282px;
+    padding-bottom: 350px;
+    margin-bottom: -200px;
+
+    @include smaller-than-max-width {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @include smaller-than-tablet {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 175px;
-    padding-bottom: 350px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
 
     &__title {
         font-family: $font_family_primairy;
+        color: white;
+
+
         h1 {
             color: $color_default;
+            margin: 0 auto 15px;
             max-width: 720px;
             font-size: $spacing--unit*8;
             font-weight: 900;

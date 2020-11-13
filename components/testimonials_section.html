@@ -1,0 +1,16 @@
+{% set section = include_dict.section %}
+{% set testimonials = section.testimonials %}
+<section class="content__row" data-id="{{section.section_id}}">
+    <h2 class="content__row-title">Testimonials</h2>
+    <div class="quotes">
+        {% for testimonial in testimonials %}
+        <div class="quotes__item">
+            <img src="{{ 'images/quotes.svg' | relative_url }}" alt="quotation mark icon" class="quotes__icon">
+            <div class="quotes__text">{{ testimonial.text }}</div>
+            <div class="quotes__author">{{ testimonial.author.name }}<span class="quotes__location">, {{ testimonial.author.location }}</span></div>
+        </div>
+        <div class="quotes__separator"></div>
+        {% endfor %}
+    </div>
+</section>
+

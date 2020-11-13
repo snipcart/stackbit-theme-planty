@@ -105,7 +105,9 @@
 
 .header {
   @include container-item-properties;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
   z-index: 10;
   padding-top: 50px;
   margin-left: auto;
@@ -115,20 +117,3 @@
   }
 }
 
-.header-wrapper {
-  &__overlay {
-    background: radial-gradient(at 35% top, rgba(#1e2222, 0.7), rgba(#1e2222, 0.3));
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  .no-webp & {
-    background-image: $background_images_primary;
-  }
-  .webp & {
-    background-image: $background_images_primary_opt;
-  }
-  background-repeat: no-repeat;
-  background-size: cover;
-}
