@@ -12,9 +12,9 @@ params:
   bg_image_product: /images/leaf.svg
   snipcart_api_key: ''
   footer_text: 'Copyright 2020 Planty Inc. All rights reserved.'
-  palette: default
+  palette: green
   palettes:
-    default:
+    green:
       sass:
         default: '#FFFFFF'
         light: '#F0F0F0'
@@ -26,6 +26,32 @@ params:
         active_dark: '#547567'
         dark_grey: '#273132'
         light_grey: '#6B797A'
+        bg_image_cart: /images/leaf-light-grey.svg
+    cyan:
+      sass:
+        default: '#FFFFFF'
+        light: '#F0F4F8'
+        medium: '#627D98'
+        dark: '#334E68'
+        active: '#54D1DB'
+        active_light: '#BEF8FD'
+        active_medium: '#38BEC9'
+        active_dark: '#14919B'
+        dark_grey: '#243B53'
+        light_grey: '#627D98'
+        bg_image_cart: /images/leaf-light-grey.svg
+    yellow:
+      sass:
+        default: '#FFFFFF'
+        light: '#FAF9F7'
+        medium: '#857F72'
+        dark: '#423D33'
+        active: '#F0B429'
+        active_light: '#FADB5F'
+        active_medium: '#F7C948'
+        active_dark: '#E99917'
+        dark_grey: '#27241D'
+        light_grey: '#625D52'
         bg_image_cart: /images/leaf-light-grey.svg
   main_menu:
     - title: Store

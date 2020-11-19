@@ -65,9 +65,17 @@ models:
         hidden: true
         fields:
           - type: model
+            name: green
+            label: Green
             models: [palette]
-            name: default
-            label: Default
+          - type: model
+            name: cyan
+            label: Cyan
+            models: [palette]
+          - type: model
+            name: yellow
+            label: Yellow
+            models: [palette]
       - type: list
         name: main_menu
         label: Navigation Links
