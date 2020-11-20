@@ -45,3 +45,9 @@
     font-size: $font_size_regular;
   }
 }
+
+.link-group {
+  a, .link-group .link{
+    margin: 0 0.5em 0.5em 0.5em;
+  }
+}

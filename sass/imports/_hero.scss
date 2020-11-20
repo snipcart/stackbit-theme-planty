@@ -39,7 +39,13 @@
         }
     }
 
-    &__link {
+    .link-group {
         margin-top: $spacing--unit*10;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
+
 }
+

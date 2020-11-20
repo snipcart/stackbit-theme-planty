@@ -452,6 +452,14 @@ models:
         label: URL
         required: true
         widget: url
+      - type: enum
+        name: style
+        label: Style
+        options:
+          - primary
+          - secondary
+        default: primary
+        required: true
       - type: boolean
         name: arrow
         label: CTA Arrow

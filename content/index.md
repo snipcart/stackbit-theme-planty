@@ -10,9 +10,14 @@ sections:
         # Real, beautiful plants right to your door
         Don't forget to add your Snipcart API key to the site's configuration to enable Cart actions.
     actions:
-      - title: See all items
+      - title: See all items sas
         url: "/store"
         arrow: true
+        style: primary
+      - title: See all items
+        url: "/store"
+        arrow: false
+        style: secondary
   - type: featured_products_section
     section_id: best_sellers_section
     title: Best sellers
