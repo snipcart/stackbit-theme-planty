@@ -5,12 +5,15 @@
     <div class="quotes">
         {% for testimonial in testimonials %}
         <div class="quotes__item">
-            <img src="{{ 'images/quotes.svg' | relative_url }}" alt="quotation mark icon" class="quotes__icon">
+            <svg class="quotes__icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 14.1818L4.57143 0H9.52381L5.71429 13.2893H9.52381V24H0V14.1818ZM14.4762 14.1818L19.0476 0H24L20.1905 13.2893H24V24H14.4762V14.1818Z" />
+            </svg>
             <div class="quotes__text">{{ testimonial.text }}</div>
-            <div class="quotes__author">{{ testimonial.author.name }}<span class="quotes__location">, {{ testimonial.author.location }}</span></div>
+            <div class="quotes__author">{{ testimonial.author.name }}<span class="quotes__location">,
+                    {{ testimonial.author.location }}</span></div>
         </div>
         <div class="quotes__separator"></div>
         {% endfor %}
     </div>
 </section>
-

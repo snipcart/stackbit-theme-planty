@@ -27,6 +27,12 @@
     color: $color_default;
   }
 
+  &--transparent {
+    background-color: transparent;
+    border-color: $color_active;
+    color: $color_active;
+  }
+
   &--light {
     color: $color_default;
     border: 2px solid $color_default;
