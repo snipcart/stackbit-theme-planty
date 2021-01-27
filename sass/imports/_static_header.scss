@@ -1,6 +1,4 @@
 .header-section {
-  background-color: $color_light;
-
   &__header {
     max-width: none;
     padding-top: 250px;
@@ -20,11 +18,11 @@
 
   &__content {
     max-width: 450px;
-    color: $color_light_grey;
+    color: $color_medium;
     line-height: 150%;
     padding-bottom: 50px;
 
-    &:last-child     { margin-bottom: 0 }
+    &:last-child { margin-bottom: 0 }
     &:after {
       content:"";
       margin-left: auto;
@@ -38,15 +36,32 @@
   }
 
   &__title {
-    font-family: $font_family_primairy;
+    font-family: $font_family_primary;
     font-weight: bold;
     font-size: $font_size_xxlarge;
     max-width: 600px;
-    color: $color_dark_grey;
+    color: $color_darker;
     margin-bottom: 50px;
     overflow: visible;
     @include smaller-than-tablet {
       font-size: $font_size_large;
+    }
+  }
+}
+
+@each $palette in map-keys($theme_palettes) {
+  .palette-#{$palette} {
+    .header-section {
+      &__content {
+        color: map-deep-get($theme-palettes, $palette, "medium");
+        &:after {
+          background: map-deep-get($theme-palettes, $palette, "active");
+        }
+      }
+
+      &__title {
+        color: map-deep-get($theme-palettes, $palette, "darker");
+      }
     }
   }
 }

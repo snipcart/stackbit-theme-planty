@@ -1,7 +1,6 @@
 .quotes {
   display: flex;
-
-  background-color: #f7f7f7;
+  background-color: $color_lightest;
   border-radius: 15px;
   padding: 60px;
   @include smaller-than-tablet {
@@ -16,7 +15,9 @@
 
   &__icon {
     margin-bottom: $spacing--unit*4;
+    width: -moz-fit-content;
     width: fit-content;
+    fill: $color_active;
   }
 
   &__text {
@@ -26,9 +27,9 @@
   }
 
   &__author {
-    font-family: $font_family_primairy;
+    font-family: $font_family_primary;
     color: $color_dark;
-    font-weight: 900;
+    font-weight: bold;
     text-transform: uppercase;
     margin-top: auto;
   }
@@ -43,7 +44,7 @@
     margin-right: $spacing--unit*9;
     width: 1px;
     height: 230px;
-    background-color: #cccc;
+    background-color: $color_light;
     &:last-child {
       display: none;
     }
@@ -57,6 +58,31 @@
       margin: 0;
       margin-top: $spacing--unit*9;
       margin-bottom: $spacing--unit*9;
+    }
+  }
+}
+
+@each $palette in map-keys($theme_palettes) {
+  .palette-#{$palette} {
+    .quotes {
+      background-color: map-deep-get($theme-palettes, $palette, "lightest");
+
+      &__icon {
+        fill: map-deep-get($theme-palettes, $palette, "active");
+      }
+
+      &__text,
+      &__author {
+        color: map-deep-get($theme-palettes, $palette, "dark");
+      }
+
+      &__location {
+        color: map-deep-get($theme-palettes, $palette, "medium");
+      }
+
+      &__separator {
+        background-color: map-deep-get($theme-palettes, $palette, "light");
+      }
     }
   }
 }

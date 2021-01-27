@@ -1,4 +1,14 @@
 .promo {
+  &__section {
+    &:last-child {
+      margin-bottom: 0;
+
+      picture {
+        background-color: $color_dark;
+      }
+    }
+  }
+
   display: flex;
   width: 100%;
 
@@ -7,7 +17,7 @@
     width: 0;
     padding-bottom: 50px;
     object-fit: cover;
-    background-color: $color_dark;
+
     img {
       width: 100%;
     }
@@ -28,9 +38,9 @@
   }
 
   &__title {
-    font-family: $font_family_primairy;
+    font-family: $font_family_primary;
     font-size: $font_size_xlarge;
-    font-weight: 700;
+    font-weight: bold;
     @include smaller-than-tablet {
       font-size: $font_size_large;
     }
@@ -60,6 +70,24 @@
       text-align: center;
       padding-left: 30px;
       padding-right: 30px;
+    }
+  }
+}
+
+@each $palette in map-keys($theme_palettes) {
+  .palette-#{$palette} {
+    .promo {
+      &__section {
+        &:last-child {
+          picture {
+            background-color: map-deep-get($theme-palettes, $palette, "dark");
+          }
+        }
+      }
+
+      &__message-container {
+        background-color: map-deep-get($theme-palettes, $palette, "active");
+      }
     }
   }
 }

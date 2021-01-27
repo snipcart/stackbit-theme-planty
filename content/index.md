@@ -6,6 +6,7 @@ sections:
   - type: hero_section
     section_id: hero_section
     background_image: images/header.jpg
+    background_image_opacity: 65
     content: |-
         # Real, beautiful plants right to your door
         Don't forget to add your Snipcart API key to the site's configuration to enable Cart actions.
@@ -13,6 +14,7 @@ sections:
       - title: See all items
         url: "/store"
         arrow: true
+        style: primary
   - type: featured_products_section
     section_id: best_sellers_section
     title: Best sellers
@@ -30,6 +32,7 @@ sections:
       - content/category/cactuses.md
   - type: testimonials_section
     section_id: testimonials_section
+    title: Testimonials
     testimonials:
         - author:
             name: John Dope
@@ -46,7 +49,10 @@ sections:
     title: A new home interior for summer
     subtitle: from $149.99
     image: images/promo.jpg
+    background_image: images/leaf.svg
     cta:
       title: Discover
       url: "/store"
+      style: secondary
+      arrow: true
 ---

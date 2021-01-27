@@ -1,5 +1,5 @@
 {% set section = include_dict.section %}
-<section class="content__row header-section__header" {% if section.background_image %}style="background-image: url({{section.background_image | relative_url}})"{%endif%} data-id="{{section.section_id}}">
+<section class="content__row header-section__header" {% if section.background_image %}style="background-image: url('{{section.background_image | relative_url}}')"{%endif%} data-id="{{section.section_id}}">
   <h1 class="header-section__title content__row">{{ section.headline }}</h1>
   <div class="content__row header-section__content">
     {{ section.subtitle | markdownify }}

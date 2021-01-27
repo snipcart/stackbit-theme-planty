@@ -1,5 +1,5 @@
 .nav {
-  font-family: $font_family_primairy;
+  font-family: $font_family_primary;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -17,11 +17,9 @@
     @include smaller-than-tablet {
       display: none;
     }
-    margin: 0;
+    margin: 0 auto;
     display: grid;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   &__menu-item {
@@ -52,7 +50,6 @@
     font-weight: bold;
     color: inherit;
     font-size: $font_size_regular;
-    padding-left: 0;
   }
 
   &__right {
@@ -63,40 +60,44 @@
     text-align: right;
   }
 
-  &--dark {
-    color: $color_dark;
-    .hamburger__icon-path {
-      fill: $color_dark;
+  .button--transparent {
+    color: inherit;
+
+    &:hover,
+    &:active {
+      color: inherit;
     }
-  }
-  &--dark & {
-    &__total-items {
-      color: $color_dark;
-    }
-    &__button-icon {
-      display: flex;
-      svg {
-        path {
-          fill: $color_dark;
-        }
+
+    path {
+      @include smaller-than-tablet {
+        transition: .1s;
       }
     }
   }
 
-  &--light {
-    color: $color_light;
-    .hamburger__icon-path {
-      fill: $color_light;
-    }
+  &__total-items {
+    color: inherit;
   }
-  &--light & {
-    &__total-items {
-      color: $color_light;
-    }
-    &__button-icon {
-      svg {
-        path {
-          fill: $color_light;
+
+  &__button-icon {
+    display: flex;
+  }
+
+  &--dark {
+    color: $color_dark;
+  }
+
+  &--light {
+    color: $color_lighter;
+  }
+
+  &--opened {
+    color: $color_dark;
+
+    .button--transparent {
+      path {
+        @include smaller-than-tablet {
+          transition: .1s .2s;
         }
       }
     }
@@ -117,3 +118,27 @@
   }
 }
 
+.product-template {
+  .nav {
+    @include smaller-than-tablet {
+      &:not(.nav--opened) {
+        color: $color_lighter;
+      }
+    }
+  }
+}
+
+@each $palette in map-keys($theme_palettes) {
+  .palette-#{$palette} {
+    .nav {
+      &--light {
+        color: map-deep-get($theme-palettes, $palette, "lighter");
+      }
+
+      &--dark,
+      &--opened {
+        color: map-deep-get($theme-palettes, $palette, "dark");
+      }
+    }
+  }
+}

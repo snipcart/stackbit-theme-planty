@@ -1,15 +1,22 @@
 {% extends "body.html" %}
 {% block content %}
+    {% set primary_bg_img_opacity_pct = site.params.bg_image_primary_opacity | default(100, true) %}
+    {% set primary_bg_img_opacity = primary_bg_img_opacity_pct * 0.01 %}
     <main class="content">
         <section class="product content__row content__row--full-width">
-            <div class="product__background-left-overlay"></div>
-            <div class="product__background-left" style="background-image: url({{site.params.bg_image_primary | relative_url}})"></div>
-            <div class="product__background-right" style="background-image: url({{site.params.bg_image_secondary | relative_url}})"></div>
+            <div class="product__background-left">
+                {% if site.params.bg_image_primary %}
+                <div class="product__background-left-img" style="background-image: url('{{ site.params.bg_image_primary | relative_url }}'); opacity: {{ primary_bg_img_opacity }};"></div>
+                {% endif %}
+            </div>
+            {% if site.params.bg_image_secondary %}
+            <div class="product__background-right" style="background-image: url('{{site.params.bg_image_secondary | relative_url}}')"></div>
+            {% endif %}
             <div class="product__header">
                 <a href="{{ '/store' | relative_url }}" class="product__back-to-store-link">
-                    <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.73859 4.30914H19.75V5.59286H2.63961L6.06986 8.98864L5.17449 9.875L0.25 5L5.17449 0.125L6.06986 1.01136L2.73859 4.30914Z" fill="#88DD9B"/>
-                    </svg>                        
+                    <svg width="20" height="10" viewBox="0 0 20 10" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.739 4.309h17.011v1.284h-17.11l3.43 3.396-0.895 0.886-4.924-4.875 4.924-4.875 0.895 0.886-3.331 3.298z"></path>
+                    </svg>
                     see all products
                 </a>
             </div>
@@ -52,10 +59,10 @@
             </section>
         {% endif %}
 
-        <a href="{{ '/store' | relative_url }}" class="content__row content__row--full-width content__row--mb-0 product__back-to-store" style="background-image: url({{site.params.bg_image_product | relative_url}})">
-            <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.73859 4.30914H19.75V5.59286H2.63961L6.06986 8.98864L5.17449 9.875L0.25 5L5.17449 0.125L6.06986 1.01136L2.73859 4.30914Z" fill="white"/>
-            </svg>                        
+        <a href="{{ '/store' | relative_url }}" class="content__row content__row--full-width content__row--mb-0 product__back-to-store"{% if site.params.bg_image_product %} style="background-image: url('{{site.params.bg_image_product | relative_url}}')"{% endif %}>
+            <svg width="20" height="10" viewBox="0 0 20 10" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.739 4.309h17.011v1.284h-17.11l3.43 3.396-0.895 0.886-4.924-4.875 4.924-4.875 0.895 0.886-3.331 3.298z"></path>
+            </svg>
             see all products
         </a>
     </main>

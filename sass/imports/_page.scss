@@ -9,11 +9,11 @@ main.content {
 }
 
 .gray-background {
-  background-color: #f9f9f9;
+  background-color: $color_lightest;
 }
 
 .page {
-  background-color: #f9f9f9;
+  background-color: $color_lightest;
   padding-bottom: 150px;
 
   .header-section__header {
@@ -75,10 +75,10 @@ main.content {
   }
 
   &__section-title {
-    font-family: $font_family_primairy;
+    font-family: $font_family_primary;
     font-size: 42px;
     margin-bottom: $spacing--unit*3;
-    color: $color_dark_grey;
+    color: $color_darker;
     margin-top: 75px;
     @include smaller-than-tablet {
       margin-top: 50px;
@@ -90,7 +90,7 @@ main.content {
   &__section-content {
     font-size: $font_size_regular;
     line-height: 150%;
-    color: $color_light_grey;
+    color: $color_medium;
   }
 
   &__section-image {
@@ -100,6 +100,25 @@ main.content {
       max-height: 400px;
       min-width: 100%;
       max-width: 0;
+    }
+  }
+}
+
+@each $palette in map-keys($theme_palettes) {
+  .palette-#{$palette} {
+    .gray-background,
+    .page {
+      background-color: map-deep-get($theme-palettes, $palette, "lightest");
+    }
+
+    .page {
+      &__section-title {
+        color: map-deep-get($theme-palettes, $palette, "darker");
+      }
+
+      &__section-content {
+        color: map-deep-get($theme-palettes, $palette, "medium");
+      }
     }
   }
 }

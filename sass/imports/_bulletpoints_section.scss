@@ -1,12 +1,10 @@
-.gray-background {
-  background-color: #f9f9f9;
-}
-
 .bulletpoint {
   &__section {
     display: flex;
     max-width: 1000px;
     margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
     &:nth-child(even) {
       flex-direction: row-reverse;
@@ -54,10 +52,10 @@
   }
 
   &__section-title {
-    font-family: $font_family_primairy;
+    font-family: $font_family_primary;
     font-size: 42px;
     margin-bottom: $spacing--unit*3;
-    color: $color_dark_grey;
+    color: $color_darker;
     margin-top: 75px;
     @include smaller-than-tablet {
       margin-top: 50px;
@@ -69,7 +67,7 @@
   &__section-content {
     font-size: $font_size_regular;
     line-height: 150%;
-    color: $color_light_grey;
+    color: $color_medium;
   }
 
   &__section-image {
@@ -79,6 +77,20 @@
       max-height: 400px;
       min-width: 100%;
       max-width: 0;
+    }
+  }
+}
+
+@each $palette in map-keys($theme_palettes) {
+  .palette-#{$palette} {
+    .bulletpoint {
+      &__section-title {
+        color: map-deep-get($theme-palettes, $palette, "darker");
+      }
+    
+      &__section-content {
+        color: map-deep-get($theme-palettes, $palette, "medium");
+      }
     }
   }
 }

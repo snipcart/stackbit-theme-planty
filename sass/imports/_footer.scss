@@ -9,11 +9,10 @@
       display: flex;
   }
 
-  
   &__nav {
       display: flex;
       padding: 0;
-      margin: 0;
+      margin: 0 50px 0 0;
       list-style: none;
       @include smaller-than-tablet { display: none; }
   }
@@ -27,9 +26,14 @@
     }
   }
   
-  &__logo { 
-    height: 45px; 
-    margin-right: 65px;
+  &__logo {
+    flex-shrink: 0;
+    margin-right: 50px;
+  }
+
+  &__logo-image {
+    display: block;
+    max-height: 45px;
   }
 
   &__nav-link { 
@@ -43,5 +47,19 @@
       color: $color_medium;
       font-weight: bold;
       margin-left: auto;
+      line-height: 1.2;
+  }
+}
+
+@each $palette in map-keys($theme_palettes) {
+  .palette-#{$palette} {
+    .footer {
+      background-color: map-deep-get($theme-palettes, $palette, "dark");
+
+      &__nav-link,
+      &__legal-notice {
+        color: map-deep-get($theme-palettes, $palette, "medium");
+      }
+    }
   }
 }
