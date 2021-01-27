@@ -8,7 +8,6 @@ default_thumbnail_image: images/plant4.jpg
 default_original_image: images/plant4-lg.jpg
 order: 4
 category: content/category/cactuses.md
-section: Store
 ---
 
 # Cras molestie

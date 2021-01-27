@@ -1,0 +1,134 @@
+.contact {
+  &__section {
+    display: flex;
+    @include smaller-than-tablet {
+      flex-direction: column;
+    }
+
+    &:last-child {
+      background-color: $color_dark;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    width: 0;
+    flex: 0.2;
+    object-fit: cover;
+    @include smaller-than-tablet {
+      max-height: 300px;
+      width: initial;
+      flex: initial;
+    }
+  }
+
+  &__title {
+    line-height: 56px;
+    font-family: $font_family_primary;
+    font-size: 46px;
+    color: $color_darker;
+    margin-bottom: 50px;
+    @include smaller-than-tablet {
+      font-size: $font_size_medium;
+      margin-bottom: 25px;
+      line-height: 29px;
+    }
+  }
+
+  &__text-container {
+    padding: 100px;
+    width: 0;
+    flex: 0.8;
+    flex-grow: 1;
+    background-color: $color_default;
+    margin-bottom: 50px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $font_size_regular;
+    line-height: 150%;
+    color: $color_medium;
+    @include smaller-than-tablet {
+      margin-bottom: 0;
+      padding: 40px 25px;
+      width: initial;
+      flex: initial;
+    }
+  }
+
+  &__info-container {
+    width: -moz-fit-content;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: repeat(1fr, 2);
+    @include smaller-than-tablet {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      p {
+        margin-bottom: 25px;
+      }
+      a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  &__address {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  &__telephone {
+    margin-top: auto;
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  &__email {
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  &__map-link {
+    grid-row: 2;
+    grid-column: 3;
+    display: flex;
+  }
+
+  &__separator {
+    grid-row: 1 / 3;
+    grid-column: 2;
+    width: 1px;
+    background-color: $color_light;
+    margin-right: $spacing--unit*8;
+    margin-left: $spacing--unit*8;
+  }
+}
+
+@each $palette in map-keys($theme_palettes) {
+  .palette-#{$palette} {
+    .contact {
+      &__section {
+        &:last-child {
+          background-color: map-deep-get($theme-palettes, $palette, "dark");
+        }
+      }
+
+      &__title {
+        color: map-deep-get($theme-palettes, $palette, "darker");
+      }
+
+      &__text-container {
+        color: map-deep-get($theme-palettes, $palette, "medium");
+      }
+
+      &__separator {
+        background-color: map-deep-get($theme-palettes, $palette, "light");
+      }
+    }
+  }
+}

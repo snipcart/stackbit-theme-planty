@@ -5,6 +5,7 @@
     &__row {
         @include container-item-properties;
         margin-bottom: 50px;
+        position: relative;
         &--direction-row { display: flex; flex-direction: row; }
         &--full-width         { max-width: none; padding: 0; }
         &--mb-0         { margin-bottom: 0; }
@@ -19,23 +20,43 @@
         font-size: $font_size_large;
 
         &--light {
-            svg path { fill: $color_light; }
-            color: $color_light;
+            color: $color_lighter;
         }
 
         &--dark {
-            svg path { fill: $color_dark; }
             color: $color_dark;
         }
 
         &--medium {
-            svg path { fill: $color_medium; }
             color: $color_medium;
         }
 
         svg {
+            color: inherit;
             margin-right: 10px;
             fill: currentColor;
+        }
+    }
+}
+
+@each $palette in map-keys($theme_palettes) {
+    .palette-#{$palette} {
+        .content {
+            &__row-title {
+                color: map-deep-get($theme-palettes, $palette, "medium");
+
+                &--light {
+                    color: map-deep-get($theme-palettes, $palette, "lighter");
+                }
+        
+                &--dark {
+                    color: map-deep-get($theme-palettes, $palette, "dark");
+                }
+        
+                &--medium {
+                    color: map-deep-get($theme-palettes, $palette, "medium");
+                }
+            }
         }
     }
 }

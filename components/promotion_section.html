@@ -1,17 +1,26 @@
 {% set section = include_dict.section %}
-<section class="content__row content__row--full-width content__row--mb-0"  data-id="{{section.section_id}}">
+<section class="content__row content__row--full-width promo__section"  data-id="{{section.section_id}}">
     <div class="promo">
         {% set include_dict = {'image': section.image, 'alt': section.title} %}
         {% include "picture.html" %}
 
-        <div class="promo__message-container"  style="background-image: url({{site.params.bg_image_product | relative_url}})">
+        <div class="promo__message-container" {% if section.background_image %}style="background-image: url('{{section.background_image | relative_url}}')"{% endif %}>
             <h2 class="promo__title">{{ section.title }}</h2>
             <p class="promo__subtitle">{{ section.subtitle }}</p>
             {% if section.cta %}
-            <a class="link link--light promo__link" href="{{ section.cta.url }}">
-                {{ section.cta.title }}
-                <svg width="26" height="14" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.6819 6.07886H0V7.79048H22.8139L18.2402 12.3182L19.434 13.5L26 7L19.434 0.5L18.2402 1.68182L22.6819 6.07886Z" fill="#ffffff"/></svg>
-            </a>
+                {% set cta_style = section.cta.style | default('primary', true) %}
+                <a {{ classNames('link', 'promo__link', {
+                    'link--light-filled': cta_style == 'primary',
+                    'link--light': cta_style == 'secondary',
+                    'link--light-borderless': cta_style == 'link'
+                    }) }} href="{{ section.cta.url }}">
+                    {{ section.cta.title }}
+                    {% if section.cta.arrow %}
+                    <svg width="26" height="14" viewBox="0 0 26 14" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.682 6.079h-22.682v1.712h22.814l-4.574 4.528 1.194 1.182 6.566-6.5-6.566-6.5-1.194 1.182 4.442 4.397z"></path>
+                    </svg>
+                    {% endif %}
+                </a>
             {% endif%}
         </div>
     </div>

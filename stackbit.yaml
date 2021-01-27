@@ -8,115 +8,76 @@ dataDir: data
 pagesDir: content
 logicFields:
   - order
-  - palette.sass
+  - background_image_opacity
+  - bg_image_primary_opacity
 metadata:
   title: Planty
   description: An e-commerce theme powered by Snipcart
   author: Snipcart
   authorURL: 'https://snipcart.com'
-  palettes:
-    default:
-      images:
-        small: images/demo-256x192.png
-        large: images/demo-1024x768.png
+  images:
+    small: images/demo-256x192.png
+    large: images/demo-1024x768.png
+stackbit_banner:
+  show_banner: true
+  name: Planty
+  create_url: 'https://app.stackbit.com/create?theme=planty'
+  github_url: 'https://github.com/stackbithq/stackbit-theme-planty'
 models:
   config:
     type: config
-    label: Global site config
+    label: Site Configuration
     fields:
-      - type: string
-        label: Snipcart public API key
-        name: snipcart_api_key
-      - type: string
-        label: Footer Text
-        name: footer_text
-      - type: image
-        name: logo_light
-        label: Logo Light
-      - type: image
-        name: logo_dark
-        label: Logo Dark
-      - type: image
-        name: favicon
-        label: favicon
-      - type: image
-        name: hamburger_background_image
-        label: Hamburger menu background image
-      - type: image
-        name: bg_image_primary
-        label: Primary Backround Image
-        description: Primary Backround Image (JPG or PNG)
-      - type: image
-        name: bg_image_secondary
-        label: Secondary Backround Image
-        description: Secondary Backround Image (JPG or PNG)
-      - type: image
-        name: bg_image_product
-        label: Product Backround Image
-        description: Product Backround Image (JPG or PNG)
       - type: enum
         label: Color Palette
         name: palette
         options:
-          - default
-      - type: object
-        name: palettes
-        label: Palettes
-        hidden: true
-        fields:
-          - type: model
-            models: [palette]
-            name: default
-            label: Default
+          - cyan
+          - green
+          - yellow
+        default: green
+        required: true
+      - type: string
+        label: Snipcart public API key
+        name: snipcart_api_key
+        required: true
+      - type: image
+        name: favicon
+        label: Favicon
+      - type: image
+        name: logo_light
+        label: Logo Light
+        required: true
+      - type: image
+        name: logo_dark
+        label: Logo Dark
+        required: true
+      - type: image
+        name: hamburger_background_image
+        label: Hamburger Menu Background Image
+      - type: image
+        name: bg_image_primary
+        label: Product Left Background Image
+      - type: number
+        name: bg_image_primary_opacity
+        label: Product Left Background Image Opacity
+        description: An integer between 0 and 100. A lower value makes the image more transparent
+      - type: image
+        name: bg_image_secondary
+        label: Product Right Background Image
+      - type: image
+        name: bg_image_product
+        label: Product Nav Background Image
       - type: list
         name: main_menu
         label: Navigation Links
-        description: List of navigation links.
+        description: List of navigation links
         items:
           type: model
           models: [action]
-  palette:
-    type: object
-    label: Palette
-    fields:
-      - type: object
-        name: sass
-        label: SASS
-        fields:
-          - type: string
-            label: Default light
-            name: default
-          - type: string
-            label: Light
-            name: light
-          - type: string
-            label: Medium
-            name: medium
-          - type: string
-            label: Dark
-            name: dark
-          - type: string
-            label: Active
-            name: active
-          - type: string
-            label: Active light
-            name: active_light
-          - type: string
-            label: Active medium
-            name: active_medium
-          - type: string
-            label: Active dark
-            name: active_dark
-          - type: string
-            label: Dark grey
-            name: dark_grey
-          - type: string
-            label: Light grey
-            name: light_grey
-          - type: image
-            name: bg_image_cart
-            label: Cart Backround Image
-            description: Cart Backround Image (JPG or PNG)
+      - type: string
+        label: Footer Text
+        name: footer_text
   home:
     type: page
     label: Home
@@ -188,10 +149,6 @@ models:
         name: order
         label: Order
         description: Numerical order of sorting categories
-      - type: enum
-        name: section
-        label: Section
-        options: [Store, About, Home]
   hero_section:
     type: object
     label: Hero Section
@@ -203,6 +160,10 @@ models:
         name: background_image
         label: Background Image
         description: The image shown in the background of the section.
+      - type: number
+        name: background_image_opacity
+        label: Background image opacity
+        description: An integer between 0 and 100. A lower value makes the image more transparent
       - type: markdown
         name: content
         label: Content
@@ -273,7 +234,10 @@ models:
         label: subtitle
       - type: image
         name: image
-        label: Promotion Image
+        label: Image
+      - type: image
+        name: background_image
+        label: Background Image
       - type: model
         name: cta
         label: Call to action
@@ -285,6 +249,9 @@ models:
       - type: string
         name: section_id
         label: Section ID
+      - type: string
+        name: title
+        label: Title
       - type: list
         name: testimonials
         label: Testimonials
@@ -422,10 +389,6 @@ models:
         name: category
         label: Category
         models: [category]
-      - type: enum
-        name: section
-        label: Section
-        options: [Store, About, Home]
       - type: boolean
         name: featured
         label: Featured
@@ -444,6 +407,15 @@ models:
         label: URL
         required: true
         widget: url
+      - type: enum
+        name: style
+        label: Style
+        options:
+          - primary
+          - secondary
+          - link
+        default: primary
+        required: true
       - type: boolean
         name: arrow
         label: CTA Arrow

@@ -1,9 +1,11 @@
 .hero {
+    background: $color_dark;
     width: 100%;
     margin-top: -101px;
     padding-top: 282px;
     padding-bottom: 350px;
     margin-bottom: -200px;
+    position: relative;
 
     @include smaller-than-max-width {
         padding-left: 50px;
@@ -21,25 +23,41 @@
     justify-content: center;
     text-align: center;
 
-    background-repeat: no-repeat;
-    background-size: cover;
-
     &__title {
-        font-family: $font_family_primairy;
-        color: white;
-
+        font-family: $font_family_primary;
+        color: $color_default;
+        position: relative;
 
         h1 {
             color: $color_default;
             margin: 0 auto 15px;
             max-width: 720px;
             font-size: $spacing--unit*8;
-            font-weight: 900;
+            font-weight: bold;
             @include smaller-than-tablet { font-size: $font_size_large; }
         }
     }
 
-    &__link {
+    &__bg-img {
+        background-size: cover;
+        background-repeat: no-repeat;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &__links {
         margin-top: $spacing--unit*10;
+        position: relative;
+    }
+}
+
+@each $palette in map-keys($theme_palettes) {
+    .palette-#{$palette} {
+        .hero {
+            background-color: map-deep-get($theme-palettes, $palette, "dark");
+        }
     }
 }

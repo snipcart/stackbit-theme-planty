@@ -9,7 +9,6 @@ default_original_image: images/plant9-lg.jpg
 featured: true
 order: 9
 category: content/category/cactuses.md
-section: Store
 ---
 
 # Fusce sagittis

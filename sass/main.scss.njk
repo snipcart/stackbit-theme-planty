@@ -1,54 +1,66 @@
-{% set palette = site.params.palettes[site.params.palette].sass %}
+// Default palette
+$color_default:       #fff;
+$color_lightest:      #f7fafa;
+$color_lighter:       #f0f5f6;
+$color_light:         #d9dfe0;
+$color_medium:        #6b797a;
+$color_dark:          #384647;
+$color_darker:        #273132;
+$color_active:        #88dd9b;
+$color_active_light:  #c0fdb6;
+$color_active_medium: #5c9174;
+$color_active_dark:   #547567;
 
-$color_default: {{ palette.default }};
-$color_light: {{ palette.light }};
-$color_medium: {{ palette.medium }};
-$color_dark: {{ palette.dark }};
-$color_active: {{ palette.active }};
-$color_active_light: {{ palette.active_light }};
-$color_active_medium: {{ palette.active_medium }};
-$color_active_dark: {{ palette.active_dark }};
-$color_dark_grey: {{ palette.dark_grey }};
-$color_light_grey: {{ palette.light_grey }};
+// Alternative palettes
+$theme_palettes: (
+  cyan: (
+    lightest:      #f7f9fb,
+    lighter:       #f0f4f8,
+    light:         #d8e2ed,
+    medium:        #627d98,
+    dark:          #334e68,
+    darker:        #243b53,
+    active:        #54d1db,
+    active_light:  #bef8fd,
+    active_medium: #38bec9,
+    active_dark:   #14919b
+  ),
+  yellow: (
+    lightest:      #f7f6f5,
+    lighter:       #f0efed,
+    light:         #d8d6d1,
+    medium:        #625d52,
+    dark:          #38352f,
+    darker:        #27241d,
+    active:        #fbbf24,
+    active_light:  #fcd34d,
+    active_medium: #f7b305,
+    active_dark:   #d49a04
+  )
+);
 
-$background_images_cart: url({{ palette.bg_image_cart }});
-
-$font_size_small: 18px;
-$font_size_xxlarge: 64px;
-$font_size_xlarge: 48px;
-$font_size_large: 32px;
-$font_size_medium: 24px;
-$font_size_regular: 20px;
-$font_size_small: 16px;
-
-$font_family_primairy: 'Open Sans', sans-serif;
+// Font family
+$font_family_primary:   'Open Sans', sans-serif;
 $font_family_secondary: 'Lato', sans-serif;
 
-* {
-    box-sizing: border-box;
-}
+// Font sizes
+$font_size_xxlarge: 64px;
+$font_size_xlarge:  48px;
+$font_size_large:   32px;
+$font_size_medium:  24px;
+$font_size_regular: 20px;
+$font_size_small:   16px;
 
-body {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-figure {
-    margin: 0;
-    padding: 0;
-}
+// Spacing
+$spacing--max-width: 1300px;
+$spacing--unit:      8px;
 
 // Global styles
-@import "imports/reset";
+@import "imports/functions";
 @import "imports/mixins";
-@import "imports/spacing";
+@import "imports/reset";
 @import "imports/fonts";
+@import "imports/base";
 @import "imports/links";
 @import "imports/buttons";
 
@@ -62,6 +74,7 @@ figure {
 @import "imports/page";
 @import "imports/hero";
 @import "imports/faq";
+@import "imports/contact";
 @import "imports/hamburger";
 @import "imports/static_header";
 @import "imports/quotes";

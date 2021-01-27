@@ -1,10 +1,25 @@
 {% set section = include_dict.section %}
-<section class="hero" {% if section.background_image %}style="background-image: url({{section.background_image | relative_url}})"{%endif%}  data-id="{{section.section_id}}">
+{% set bg_img_opacity_pct = section.background_image_opacity | default(100, true) %}
+{% set bg_img_opacity = bg_img_opacity_pct * 0.01 %}
+<section class="hero bg-color" data-id="{{section.section_id}}">
+    {% if section.background_image %}
+    <div class="hero__bg-img" style="background-image: url('{{ section.background_image | relative_url }}'); opacity: {{ bg_img_opacity }};"></div>
+    {% endif %}
     <div class="hero__title">{{ section.content | markdownify }}</div>
-    {% for action in section.actions %}
-        <a href="{{ action.url | relative_url }}" class="link hero__link">
+    <div class="hero__links link-group">
+      {% for action in section.actions %}
+        {% set action_style = action.style | default('primary', true) %}
+        <a href="{{ action.url | relative_url }}" {{ classNames('link', {
+              'link--filled': action_style == 'primary',
+              'link--borderless': action_style == 'link'
+            }) }}>
           {{ action.title }}
-          {% if action.arrow %}<svg width="26" height="14" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.6819 6.07886H0V7.79048H22.8139L18.2402 12.3182L19.434 13.5L26 7L19.434 0.5L18.2402 1.68182L22.6819 6.07886Z" fill="#88DD9B"/></svg>{%endif%}
+          {% if action.arrow %}
+          <svg width="26" height="14" viewBox="0 0 26 14" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.682 6.079h-22.682v1.712h22.814l-4.574 4.528 1.194 1.182 6.566-6.5-6.566-6.5-1.194 1.182 4.442 4.397z"></path>
+          </svg>
+          {% endif %}
         </a>
-    {% endfor %}
+      {% endfor %}
+    </div>
 </section>

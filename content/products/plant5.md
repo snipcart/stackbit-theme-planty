@@ -9,7 +9,6 @@ default_original_image: images/plant5-lg.jpg
 featured: true
 order: 5
 category: content/category/bigplants.md
-section: Store
 ---
 
 # Vestibulum eget
