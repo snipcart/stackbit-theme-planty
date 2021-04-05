@@ -9,6 +9,32 @@ default_original_image: images/plant9-lg.jpg
 featured: true
 order: 9
 category: content/category/cactuses.md
+seo:
+  title: Fusce sagittis
+  description: Nulla diam diam, maximus gravida efficitur eu, ultricies quis orci
+  extra:
+    - name: og:type
+      value: website
+      keyName: property
+    - name: og:title
+      value: Fusce sagittis
+      keyName: property
+    - name: og:description
+      value: Nulla diam diam, maximus gravida efficitur eu, ultricies quis orci
+      keyName: property
+    - name: og:image
+      value: images/plant9-lg.jpg
+      keyName: property
+      relativeUrl: true
+    - name: twitter:card
+      value: summary_large_image
+    - name: twitter:title
+      value: Fusce sagittis
+    - name: twitter:description
+      value: Nulla diam diam, maximus gravida efficitur eu, ultricies quis orci
+    - name: twitter:image
+      value: images/plant9-lg.jpg
+      relativeUrl: true
 ---
 
 # Fusce sagittis

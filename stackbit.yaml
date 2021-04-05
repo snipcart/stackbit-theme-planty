@@ -28,6 +28,10 @@ models:
     type: config
     label: Site Configuration
     fields:
+      - type: string
+        name: domain
+        label: Domain
+        description: The domain of your site, including the protocol, e.g. https://mysite.com/
       - type: enum
         label: Color Palette
         name: palette
@@ -85,7 +89,7 @@ models:
     hideContent: true
     file: index.md
     singleInstance: true
-    extends: advancedPageFields
+    extends: advanced_page_fields
   advanced:
     type: page
     label: Advanced Page
@@ -94,7 +98,7 @@ models:
     exclude:
       - "store.md"
       - "index.md"
-    extends: advancedPageFields
+    extends: advanced_page_fields
   store:
     type: page
     label: Store
@@ -102,9 +106,10 @@ models:
     file: store.md
     singleInstance: true
     hideContent: true
-    extends: advancedPageFields
-  advancedPageFields:
+    extends: advanced_page_fields
+  advanced_page_fields:
     type: object
+    label: Advanced page fields
     fields:
       - type: string
         label: Title
@@ -134,6 +139,9 @@ models:
             - faq_section
             - bulletpoints_section
             - contact_section
+      - type: model
+        name: seo
+        models: [stackbit_page_meta]
   category:
     type: page
     label: Category
@@ -149,6 +157,9 @@ models:
         name: order
         label: Order
         description: Numerical order of sorting categories
+      - type: model
+        name: seo
+        models: [stackbit_page_meta]
   hero_section:
     type: object
     label: Hero Section
@@ -393,6 +404,9 @@ models:
         name: featured
         label: Featured
         default: false
+      - type: model
+        name: seo
+        models: [stackbit_page_meta]
   action:
     type: object
     label: Action
@@ -406,7 +420,7 @@ models:
         name: url
         label: URL
         required: true
-        widget: url
+        default: "#"
       - type: enum
         name: style
         label: Style
@@ -419,3 +433,51 @@ models:
       - type: boolean
         name: arrow
         label: CTA Arrow
+  stackbit_page_meta:
+    type: object
+    label: Page meta data
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: 'The page title that goes into the <title> tag'
+        default: ""
+      - type: string
+        name: description
+        label: Description
+        description: 'The page description that goes into the <meta name="description"> tag'
+        default: ""
+      - type: list
+        name: robots
+        label: Robots
+        description: 'The items that go into the <meta name="robots"> tag'
+        items:
+          type: enum
+          options:
+            - all
+            - index
+            - follow
+            - noindex
+            - nofollow
+            - noimageindex
+            - notranslate
+            - none
+      - type: list
+        name: extra
+        label: Extra
+        description: 'Additional definition for specific meta tags such as open-graph, twitter, etc.'
+        items:
+          type: object
+          labelField: name
+          fields:
+            - type: string
+              name: name
+              default: ""
+            - type: string
+              name: value
+              default: ""
+            - type: string
+              name: keyName
+              default: name
+            - type: boolean
+              name: relativeUrl
