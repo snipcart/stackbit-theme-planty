@@ -98,6 +98,8 @@ models:
     exclude:
       - "store.md"
       - "index.md"
+      - category/**
+      - products/**
     extends: advanced_page_fields
   store:
     type: page
