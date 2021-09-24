@@ -7,7 +7,11 @@
     "build": {
       "patterns": "*",
       "extensions": "*",
-      "ignore": ["public", "node_modules", "package.json"]
+      "ignore": [
+        "public",
+        "node_modules",
+        "package.json"
+      ]
     }
   },
   "scripts": {
