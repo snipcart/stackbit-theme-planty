@@ -1,4 +1,4 @@
-![logo](https://snipcart.com/media/204485/logo.svg)
+![logo](https://og-website.snipcart.com/media/204485/logo.svg)
 
 # Planty Stackbit theme
 
@@ -25,7 +25,7 @@ In Stackbit's custom themes importer, just use this repository URL. For the mome
 
 First thing is to enter your Snipcart API key. Open your CMS and go to `Global site config`.
 
-![api-key](https://snipcart.com/media/204516/config_api_key.png)
+![api-key](https://og-website.snipcart.com/media/204516/config_api_key.png)
 
 Use your **public** API key in there.
 
@@ -33,60 +33,60 @@ Use your **public** API key in there.
 
 Logos can be updated via the CMS as well. You'll be asked to provide a dark and a light logo.
 
-![logo](https://snipcart.com/media/204518/config_logos.png)
+![logo](https://og-website.snipcart.com/media/204518/config_logos.png)
 
 ### Styles configuration
 
 Colors can be managed via the CMS as well. Under `Global site config` section, open `Styles config`. You'll see all colors used throughout the theme listed here. Adjust them for your own branding.
 
-![styles-config](https://snipcart.com/media/204508/config_styles.png)
+![styles-config](https://og-website.snipcart.com/media/204508/config_styles.png)
 
 You can also configure background images in there.
 
-![background-images](https://snipcart.com/media/204517/config_backgroundimages.png)
+![background-images](https://og-website.snipcart.com/media/204517/config_backgroundimages.png)
 
 ### Categories
 
 Each product can be associated to a category. Open the Categories section and manage them there.
 
-![categories](https://snipcart.com/media/204510/list_categories.png)
+![categories](https://og-website.snipcart.com/media/204510/list_categories.png)
 
 ### Products
 
 Products can be managed directly through the CMS via the Products section.
 
-![products](https://snipcart.com/media/204511/list_products.png)
+![products](https://og-website.snipcart.com/media/204511/list_products.png)
 
 Products have several properties available, both for Snipcart and for the theme. You can define its price, description, name, ID, etc.
 
 You can also define if this is a **featured** product, meaning that it will show in the Best sellers section on the site. A feature product will use the Feature images set.
 
-![product-details](https://snipcart.com/media/204514/product_details.png)
+![product-details](https://og-website.snipcart.com/media/204514/product_details.png)
 
 ### Promotion
 
 The promotion is a component displayed just above the footer on some pages. You can configure what to show in that box via the CMS.
 
-![promotion](https://snipcart.com/media/204504/components_promotion.png)
+![promotion](https://og-website.snipcart.com/media/204504/components_promotion.png)
 
 You can define a Call to action for the promotion, it's usually a link to a section of your site.
 
-![promotion-cta](https://snipcart.com/media/204505/components_promotion_cta.png)
+![promotion-cta](https://og-website.snipcart.com/media/204505/components_promotion_cta.png)
 
 ### Testimonials
 
 You can manage testimonials to show on the site via this section.
 
-![testimonials](https://snipcart.com/media/204506/components_testimonials.png)
+![testimonials](https://og-website.snipcart.com/media/204506/components_testimonials.png)
 
 ### About
 
 Manage the content of the About section here.
 
-![about](https://snipcart.com/media/204512/pages_about.png)
+![about](https://og-website.snipcart.com/media/204512/pages_about.png)
 
 ### FAQ
 
 Manage your FAQ entries in this section.
 
-![faq](https://snipcart.com/media/204513/pages_faq.png)
+![faq](https://og-website.snipcart.com/media/204513/pages_faq.png)
