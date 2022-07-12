@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "unibit build",
+    "build": "CI='' npm run build",
     "dev": "npm-watch"
   },
   "repository": {

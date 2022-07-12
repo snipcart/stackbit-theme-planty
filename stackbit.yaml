@@ -1,4 +1,4 @@
-stackbitVersion: ~0.3.0
+stackbitVersion: ~0.4.0
 ssgName: unibit
 buildCommand: unibit build
 publishDir: output
